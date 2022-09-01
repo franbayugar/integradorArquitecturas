@@ -2,11 +2,15 @@ package Interface;
 
 import java.util.List;
 
+import Modelo.Cliente;
+
 public interface DAOCliente {
-	public List<DAOCliente> selectClientes();
+	public List<Cliente> selectClientes();
+	
+	public void createCliente();
 	
 	// se incorpora derecho en BBDD
-	public void createCliente(String name, String mail);
+	public void insertCliente(String name, String mail);
 
 	public DAOCliente getCliente(int id);
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 import Connection.ConexionDerby;
 import Interface.DAOFacturaProducto;
+import Modelo.FacturaProducto;
 
 public class FacturaProductoDerbyImpl extends ConexionDerby implements DAOFacturaProducto{
 
@@ -20,7 +21,7 @@ public class FacturaProductoDerbyImpl extends ConexionDerby implements DAOFactur
 	}
 
 	@Override
-	public List<DAOFacturaProducto> detalleFactura(int id) {
+	public List<FacturaProducto> detalleFactura(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

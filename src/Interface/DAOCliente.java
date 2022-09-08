@@ -16,7 +16,7 @@ public interface DAOCliente {
 	
 	public List<Cliente> getClienteByName(String name);
 	
-	public Cliente getClienteByMail(String mail);
+	public List<Cliente> getClienteByMail(String mail);
 	
 	public List<Cliente> getRankingFacturacion();
 

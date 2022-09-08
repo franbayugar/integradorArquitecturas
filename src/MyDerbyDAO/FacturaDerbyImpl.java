@@ -7,6 +7,7 @@ import Interface.DAOCliente;
 import Interface.DAOFactura;
 import Interface.DAOFacturaProducto;
 import Interface.DAOProducto;
+import Modelo.Factura;
 
 public class FacturaDerbyImpl extends ConexionDerby implements DAOFactura{
 
@@ -26,6 +27,12 @@ public class FacturaDerbyImpl extends ConexionDerby implements DAOFactura{
 	public void insertFactura(int idFactura, int idCliente) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Factura getFactura(int idFactura) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

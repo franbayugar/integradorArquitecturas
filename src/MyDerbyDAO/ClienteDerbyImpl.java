@@ -101,7 +101,7 @@ public class ClienteDerbyImpl extends ConexionDerby implements DAOCliente{
 	}
 
 	@Override
-	public Cliente getClienteByMail(String mail) {
+	public List<Cliente> getClienteByMail(String mail) {
 		String query = "SELECT * FROM cliente WHERE email = ?";
 		PreparedStatement ps;
 		try {

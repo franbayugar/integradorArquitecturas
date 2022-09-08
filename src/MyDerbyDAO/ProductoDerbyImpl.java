@@ -7,11 +7,14 @@ import Interface.DAOCliente;
 import Interface.DAOFactura;
 import Interface.DAOFacturaProducto;
 import Interface.DAOProducto;
+import Modelo.Cliente;
+import Modelo.Factura;
+import Modelo.Producto;
 
 public class ProductoDerbyImpl extends ConexionMySql implements DAOProducto{
 
 	@Override
-	public List<DAOProducto> selectProductos() {
+	public List<Producto> selectProductos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -29,39 +32,17 @@ public class ProductoDerbyImpl extends ConexionMySql implements DAOProducto{
 	}
 
 	@Override
-	public DAOFactura getProducto(int idProducto) {
+	public Factura getProducto(int idProducto) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DAOProducto getMayorRecaudacion() {
+	public Producto getMayorRecaudacion() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public DAOCliente getDAOCliente() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DAOFactura getDAOFactura() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DAOProducto getDAOProducto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DAOFacturaProducto getDAOFacturaProducto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

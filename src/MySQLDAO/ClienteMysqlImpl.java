@@ -48,25 +48,25 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 	}
 
 	@Override
-	public DAOCliente getCliente(int id) {
+	public Cliente getCliente(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DAOCliente getClienteByName(String name) {
+	public ArrayList<Cliente> getClienteByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DAOCliente getClienteByMail(String mail) {
+	public ArrayList<Cliente> getClienteByMail(String mail) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<DAOCliente> getRankingFacturacion() {
+	public ArrayList<Cliente> getRankingFacturacion() {
 		// TODO Auto-generated method stub
 		return null;
 	}

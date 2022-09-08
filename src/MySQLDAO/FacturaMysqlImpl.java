@@ -7,6 +7,7 @@ import Interface.DAOCliente;
 import Interface.DAOFactura;
 import Interface.DAOFacturaProducto;
 import Interface.DAOProducto;
+import Modelo.Factura;
 
 public class FacturaMysqlImpl extends ConexionMySql implements DAOFactura{
 
@@ -29,33 +30,10 @@ public class FacturaMysqlImpl extends ConexionMySql implements DAOFactura{
 	}
 
 	@Override
-	public DAOFactura getFactura(int idFactura) {
+	public Factura getFactura(int idFactura) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public DAOCliente getDAOCliente() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DAOFactura getDAOFactura() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DAOProducto getDAOProducto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DAOFacturaProducto getDAOFacturaProducto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

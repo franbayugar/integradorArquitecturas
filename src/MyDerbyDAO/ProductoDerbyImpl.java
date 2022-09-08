@@ -32,13 +32,13 @@ public class ProductoDerbyImpl extends ConexionMySql implements DAOProducto{
 	}
 
 	@Override
-	public Factura getProducto(int idProducto) {
+	public Producto getMayorRecaudacion() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Producto getMayorRecaudacion() {
+	public Producto getProducto(int idProducto) {
 		// TODO Auto-generated method stub
 		return null;
 	}

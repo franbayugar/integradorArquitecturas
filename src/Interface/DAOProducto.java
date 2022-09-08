@@ -12,7 +12,7 @@ public interface DAOProducto {
 	// se incorpora derecho en BBDD
 	public void insertProducto(String name, float value);
 
-	public Factura getProducto(int idProducto);
+	public Producto getProducto(int idProducto);
 	
 	public Producto getMayorRecaudacion();
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import Connection.ConexionMySql;
 import Interface.DAOFacturaProducto;
+import Modelo.FacturaProducto;
 
 public class FacturaProductoMysqlImpl extends ConexionMySql implements DAOFacturaProducto{
 
@@ -20,7 +21,7 @@ public class FacturaProductoMysqlImpl extends ConexionMySql implements DAOFactur
 	}
 
 	@Override
-	public List<DAOFacturaProducto> detalleFactura(int id) {
+	public List<FacturaProducto> detalleFactura(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

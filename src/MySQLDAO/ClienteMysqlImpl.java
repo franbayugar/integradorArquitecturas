@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import DAOFactory.ConexionMySql;
+import Connection.ConexionMySql;
 import Interface.DAOCliente;
 import Modelo.Cliente;
 

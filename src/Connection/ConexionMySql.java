@@ -1,10 +1,13 @@
-package DAOFactory;
+package Connection;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConexionMySql implements DAOConexion {
+import Factories.FactoryDB;
+
+public class ConexionMySql  {
 	
 	private Connection conexion; 	
 	private String uri = "jdbc:mysql://localhost:3306/bataman";
@@ -13,17 +16,24 @@ public class ConexionMySql implements DAOConexion {
 	private String password = "root";
 		
 	public ConexionMySql() {
-		this.conexion=null;
+		this.conexion=this.getInstance();
 	}
 	
-	@Override
+	
 	public Connection getInstance() {
 		 if (conexion==null) connect();			  	 
 		 return this.conexion;
 	}
 
-	@Override
-	public void connect() {		
+	
+	public void connect() {
+		try {
+			Class.forName(driver).getDeclaredConstructor().newInstance();
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
+			e.printStackTrace();
+			System.exit(1);
+		}
 		   try {
 			this.conexion = DriverManager.getConnection(this.uri, this.user, this.password);
 		   }
@@ -33,7 +43,7 @@ public class ConexionMySql implements DAOConexion {
 		
 	}
 
-	@Override
+	
 	public void disconnect() {
 		try {
 			this.conexion.close();

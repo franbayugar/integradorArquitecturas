@@ -2,6 +2,8 @@ package Interface;
 
 import java.util.List;
 
+import Modelo.Factura;
+
 public interface DAOFactura {
 	public List<DAOFactura> selectFacturas();
 	
@@ -9,6 +11,6 @@ public interface DAOFactura {
 	// se incorpora derecho en BBDD
 	public void insertFactura(int idFactura, int idCliente);
 
-	public DAOFactura getFactura(int idFactura);
+	public Factura getFactura(int idFactura);
 	
 }

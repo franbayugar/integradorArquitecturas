@@ -12,13 +12,13 @@ public interface DAOCliente {
 	// se incorpora derecho en BBDD
 	public void insertCliente(String name, String mail);
 
-	public DAOCliente getCliente(int id);
+	public Cliente getCliente(int id);
 	
-	public DAOCliente getClienteByName(String name);
+	public List<Cliente> getClienteByName(String name);
 	
-	public DAOCliente getClienteByMail(String mail);
+	public Cliente getClienteByMail(String mail);
 	
-	public List<DAOCliente> getRankingFacturacion();
+	public List<Cliente> getRankingFacturacion();
 
 
 }

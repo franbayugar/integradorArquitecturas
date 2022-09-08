@@ -41,7 +41,7 @@ public class ConexionDerby  {
 		
 	}
 
-	@Override
+
 	public void disconnect() {
 		try {
 			this.conexion.close();

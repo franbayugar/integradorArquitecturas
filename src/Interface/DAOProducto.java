@@ -9,6 +9,7 @@ public interface DAOProducto {
 	/**
 	 * Gets the list of all Producto records.   
 	 * @return ArrayList of Producto.
+	 * @see Producto class
 	 */
 	public List<Producto> selectProductos();
 	
@@ -23,6 +24,7 @@ public interface DAOProducto {
 	 * @param id the Producto identifier. 
 	 * @param name the Producto name.
 	 * @param value the Producto value.
+	 * @see Producto class
 	 */
 	public void insertProducto(int id, String name, float value);
 
@@ -31,6 +33,7 @@ public interface DAOProducto {
 	 * Gets a Producto by ID
 	 * @param idProducto   the Producto identification number. 
 	 * @return Producto
+	 * @see Producto class
 	 */
 	public Producto getProducto(int idProducto);
 	
@@ -38,6 +41,7 @@ public interface DAOProducto {
 	/**
 	 * Gets the highest grossing Producto.   
 	 * @return Producto
+	 * @see Producto class
 	 */
 	public Producto getMayorRecaudacion();
 }

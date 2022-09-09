@@ -9,6 +9,7 @@ public interface DAOFactura {
 	/**
 	 * Gets the list of all Factura records.   
 	 * @return ArrayList of Factura.
+	 * @see Factura class
 	 */
 	public List<Factura> selectFacturas();
 	
@@ -23,13 +24,15 @@ public interface DAOFactura {
 	 * Insert a new record Factura in the table.
 	 * @param idFactura the Factura identifier. 
 	 * @param idCliente the Cliente identifier.
+	 * @see Factura class
 	 */
 	public void insertFactura(int idFactura, int idCliente);
 
 	
 	/**
 	 * Obtains the Factura whit specified id.
-	 * @param idFactura the Factura identifier.	  
+	 * @param idFactura the Factura identifier.
+	 * @see Factura class	  
 	 */
 	public Factura getFactura(int idFactura);
 	

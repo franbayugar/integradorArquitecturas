@@ -12,8 +12,8 @@ private final static String Derby = "Derby";
 /**Obtains the connection according to the specified technology
  * @param db  the String that identifies the DB Engine
  * @return FactoryDB object
- * @see FactoryDerby class
- * @see FactorySQL class
+ * @see FactoryDerby interface
+ * @see FactorySQL interface
  *
  */
 public static FactoryDB getConnetion(String db) {
@@ -30,28 +30,28 @@ public static FactoryDB getConnetion(String db) {
 /**
  * Obtains a DAOCliente object
  * @return DAOCliente
- * @see DAOCliente class
+ * @see DAOCliente interface
  */
 	public abstract DAOCliente getDAOCliente();
 	
 	/**
 	 * Obtains a DAOFactura object
 	 * @return DAOFactura
-	 * @see DAOFactura class
+	 * @see DAOFactura interface
 	 */
 	public abstract DAOFactura getDAOFactura();
 	
 	/**
 	 * Obtains a DAOProducto object
 	 * @return DAOProducto
-	 * @see DAOProducto class
+	 * @see DAOProducto interface
 	 */
 	public abstract DAOProducto getDAOProducto();
 	
 	/**
 	 * Obtains a DAOFacturaProducto object
 	 * @return AOFacturaProducto
-	 * @see AOFacturaProducto class
+	 * @see DAOFacturaProducto interface
 	 */
 	public abstract DAOFacturaProducto getDAOFacturaProducto();
 }

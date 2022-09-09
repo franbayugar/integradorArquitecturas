@@ -9,6 +9,7 @@ public interface DAOCliente {
 	/**
 	 * Gets the list of all Cliente records.   
 	 * @return ArrayList of Cliente.
+	 * @see Cliente class
 	 */
 	public List<Cliente> selectClientes();
 	
@@ -23,6 +24,7 @@ public interface DAOCliente {
 	 * @param id the Cliente identifier. 
 	 * @param name the Cliente name.
 	 * @param mail the Cliente email.
+	 * @see Cliente class
 	 */
 	public void insertCliente(int id, String name, String mail);
 	
@@ -31,6 +33,7 @@ public interface DAOCliente {
 	 * Gets a client by ID
 	 * @param id   the client identification number. 
 	 * @return Cliente
+	 * @see Cliente class
 	 */
 	public Cliente getCliente(int id);
 	
@@ -39,6 +42,7 @@ public interface DAOCliente {
 	 * Gets a list of clients with a specified name.
 	 * @param name   the String name. 
 	 * @return ArrayList of Cliente.
+	 * @see Cliente class
 	 */
 	public List<Cliente> getClienteByName(String name);
 
@@ -47,6 +51,7 @@ public interface DAOCliente {
 	 * Gets a list of clients with a specified email.
 	 * @param mail   the String email. 
 	 * @return ArrayList of Cliente.
+	 * @see Cliente class
 	 */
 	public List<Cliente> getClienteByMail(String mail);
 
@@ -54,6 +59,7 @@ public interface DAOCliente {
 	/**
 	 * Gets a list of clients with a returns a list of customers sorted by billing in descending order.   
 	 * @return ArrayList of Cliente.
+	 * @see Cliente class
 	 */
 	public List<Cliente> getRankingFacturacion();
 

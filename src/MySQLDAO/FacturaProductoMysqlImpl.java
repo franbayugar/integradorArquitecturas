@@ -12,7 +12,7 @@ public class FacturaProductoMysqlImpl extends ConexionMySql implements DAOFactur
 
 	@Override
 	public void createFacturaProducto() {
-		String query = "CREATE TABLE factura_producto (idFactura INT, idProducto INT, cantidad INT, PRIMARY KEY (idFactura, idCliente))";
+		String query = "CREATE TABLE factura_producto (idFactura INT, idProducto INT, cantidad INT, PRIMARY KEY (idFactura, idProducto))";
 		try {
 			super.getInstance().prepareStatement(query).execute();
 			super.getInstance().commit();

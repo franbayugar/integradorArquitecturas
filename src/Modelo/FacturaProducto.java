@@ -1,5 +1,12 @@
 package Modelo;
 
+/**
+ * Defines the attributes of the FacturaProducto entity, which displays 
+ * the results of matching between a Factura record and his corresponding 
+ * Producto entities
+ * @author fede
+ *
+ */
 public class FacturaProducto {
 	private int idFactura;
 	private int idProducto;

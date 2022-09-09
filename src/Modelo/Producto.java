@@ -1,5 +1,10 @@
 package Modelo;
 
+/**
+ * Defines the attributes of the Producto entity 
+ * @author fede
+ *
+ */
 public class Producto {
 	private int idProducto;
 	private String nombre;

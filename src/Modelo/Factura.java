@@ -1,5 +1,10 @@
 package Modelo;
 
+/**
+ * Defines the attributes of the Factura entity 
+ * @author fede
+ *
+ */
 public class Factura {
 	private int idFactura;
 	private int idCliente;

@@ -1,5 +1,10 @@
 package Modelo;
 
+/**
+ * Defines the attributes of the Cliente entity 
+ * @author fede
+ *
+ */
 public class Cliente {
 	private int idCliente;
 	private String name;

@@ -17,13 +17,19 @@ public class ConexionMySql  {
 		this.conexion=this.getInstance();
 	}
 	
-	
+	/**
+	 * creates aninstance of a MySQL connection if the instance dont exists, else returns it
+	 * @return Connection
+	 * @see Connection JAVA interface
+	 */
 	public Connection getInstance() {
 		 if (conexion==null) connect();			  	 
 		 return this.conexion;
 	}
 
-	
+	/**
+	 * connects the DB  
+	 */
 	public void connect() {
 		try {
 			Class.forName(driver).getDeclaredConstructor().newInstance();
@@ -42,7 +48,9 @@ public class ConexionMySql  {
 		
 	}
 
-	
+	/**
+	 * disconnects the DB  
+	 */
 	public void disconnect() {
 		try {
 			this.conexion.close();

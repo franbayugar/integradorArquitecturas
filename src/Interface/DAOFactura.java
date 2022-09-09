@@ -5,12 +5,32 @@ import java.util.List;
 import Modelo.Factura;
 
 public interface DAOFactura {
-	public List<DAOFactura> selectFacturas();
 	
+	/**
+	 * Gets the list of all Factura records.   
+	 * @return ArrayList of Factura.
+	 */
+	public List<Factura> selectFacturas();
+	
+	
+	/**
+	 * Create a table Factura.
+	 */
 	public void createFactura();
-	// se incorpora derecho en BBDD
+	
+	
+	/**
+	 * Insert a new record Factura in the table.
+	 * @param idFactura the Factura identifier. 
+	 * @param idCliente the Cliente identifier.
+	 */
 	public void insertFactura(int idFactura, int idCliente);
 
+	
+	/**
+	 * Obtains the Factura whit specified id.
+	 * @param idFactura the Factura identifier.	  
+	 */
 	public Factura getFactura(int idFactura);
 	
 }

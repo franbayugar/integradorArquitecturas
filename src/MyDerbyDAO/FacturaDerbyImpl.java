@@ -9,7 +9,7 @@ import Modelo.Factura;
 public class FacturaDerbyImpl extends ConexionDerby implements DAOFactura{
 
 	@Override
-	public List<DAOFactura> selectFacturas() {
+	public List<Factura> selectFacturas() {
 		// TODO Auto-generated method stub
 		return null;
 	}

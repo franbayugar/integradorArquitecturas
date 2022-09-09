@@ -1,3 +1,8 @@
+/**
+ *<h3>Main</h3> 
+ * 
+ */
+
 package main;
 
 import java.io.FileNotFoundException;
@@ -11,6 +16,7 @@ import Interface.DAOCliente;
 import Interface.DAOFactura;
 import Interface.DAOFacturaProducto;
 import Interface.DAOProducto;
+import Modelo.Cliente;
 
 public class Main {
 
@@ -22,10 +28,18 @@ public class Main {
 		createClientesCSV(db.getDAOCliente());
 		createFacturasCSV(db.getDAOFactura());
 		createFacturaProductoCSV(db.getDAOFacturaProducto());
+		
+		Cliente c = db.getDAOCliente().getCliente(1);
 
 
 	}
 	
+	 /**
+	 * This method populate the table FacturaProducto from a csv file.
+	 * @param the daoFacturaProducto Is obtained from BBDD through getDAOFacturaProducto.
+	 * @exception Not found file csv.
+	 * @see Class DAOFacturaProducto.	  
+	 **/
 	private static void createFacturaProductoCSV(DAOFacturaProducto daoFacturaProducto) {
 		CSVParser parser = null;
 
@@ -46,6 +60,12 @@ public class Main {
 		
 	}
 
+	/**
+	 * This method populate the table Cliente from a csv file.
+	 * @param the daoCliente Is obtained from BBDD through getDAOCliente method.
+	 * @exception Not found file csv.
+	 * @see Class DAOCliente.
+	 **/
 	private static void createClientesCSV(DAOCliente daoCliente) {
 		CSVParser parser = null;
 
@@ -66,6 +86,13 @@ public class Main {
 		
 	}
 
+	
+	/**
+	 * This method populate the table Factura from a csv file.
+	 * @param the daoFactura. Is obtained from BBDD through getDAOFactura.
+	 * @exception Not found file csv.
+	 * @see Class DAOFactura.	  
+	 **/
 	private static void createFacturasCSV(DAOFactura daoFactura) {
 		CSVParser parser = null;
 
@@ -85,6 +112,13 @@ public class Main {
 		
 	}
 
+	/**
+	 * This method populate the table Producto from a csv file.
+	 * @param daoProducto. Is obtained from BBDD through getDAOProducto.
+	 * @exception FileNotFoundException Not found file csv.
+	 * @exception IOException If an input or output.
+	 * @see Class DAOProducto.	  
+	 **/
 	public static void createProductosCSV(DAOProducto daoProducto) {
 		CSVParser parser = null;
 

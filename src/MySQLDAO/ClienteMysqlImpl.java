@@ -32,7 +32,7 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 
 	@Override
 	public void createCliente() {
-		String query = "CREATE TABLE cliente (id INT, name VARCHAR(30), email VARCHAR(30), PRIMARY KEY (id))";
+		String query = "CREATE TABLE cliente (id INT, name VARCHAR(30), email VARCHAR(100), PRIMARY KEY (id))";
 		try {
 			super.getInstance().prepareStatement(query).execute();
 			super.getInstance().commit();
@@ -44,11 +44,12 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 	}
 
 	@Override
-	public void insertCliente(String name, String mail) {
-		String query = "INSERT INTO cliente values ('', ?, ?)";
+	public void insertCliente(int id, String name, String mail) {
+		String query = "INSERT INTO cliente values (?, ?, ?)";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);
+			ps.setInt(1, id);
 			ps.setString(2, name);
 			ps.setString(3, mail);
 			ps.executeUpdate();

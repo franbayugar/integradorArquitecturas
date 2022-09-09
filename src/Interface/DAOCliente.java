@@ -10,7 +10,7 @@ public interface DAOCliente {
 	public void createCliente();
 	
 	// se incorpora derecho en BBDD
-	public void insertCliente(String name, String mail);
+	public void insertCliente(int id, String name, String mail);
 
 	public Cliente getCliente(int id);
 	

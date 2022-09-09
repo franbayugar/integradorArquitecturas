@@ -1,5 +1,7 @@
 package MySQLDAO;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 import Connection.ConexionMySql;
@@ -16,14 +18,31 @@ public class FacturaMysqlImpl extends ConexionMySql implements DAOFactura{
 
 	@Override
 	public void createFactura() {
-		// TODO Auto-generated method stub
-		
+		String query = "CREATE TABLE factura (idFactura INT, idCliente INT, PRIMARY KEY (idFactura, idCliente))";
+		try {
+			super.getInstance().prepareStatement(query).execute();
+			super.getInstance().commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void insertFactura(int idFactura, int idCliente) {
-		// TODO Auto-generated method stub
-		
+		String query = "INSERT INTO factura values (?, ?)";
+		PreparedStatement ps;
+		try {
+			ps = super.getInstance().prepareStatement(query);
+			ps.setInt(1, idFactura);
+			ps.setInt(2, idCliente);
+			ps.executeUpdate();
+			ps.close();
+			super.getInstance().commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

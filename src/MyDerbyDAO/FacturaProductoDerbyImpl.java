@@ -15,7 +15,7 @@ public class FacturaProductoDerbyImpl extends ConexionDerby implements DAOFactur
 	}
 
 	@Override
-	public void insertFacturaProducto(int idFactura, int idProducto) {
+	public void insertFacturaProducto(int idFactura, int idProducto, int cantidad) {
 		// TODO Auto-generated method stub
 		
 	}

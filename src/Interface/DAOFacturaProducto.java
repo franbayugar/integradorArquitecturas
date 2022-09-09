@@ -7,7 +7,7 @@ import Modelo.FacturaProducto;
 public interface DAOFacturaProducto {
 	
 	public void createFacturaProducto();
-	public void insertFacturaProducto(int idFactura, int idProducto);
+	public void insertFacturaProducto(int idFactura, int idProducto, int cantidad);
 	
 	public List<FacturaProducto> detalleFactura(int id);	
 		

@@ -115,8 +115,8 @@ public class Main {
 	/**
 	 * This method populate the table Producto from a csv file.
 	 * @param daoProducto. Is obtained from BBDD through getDAOProducto.
-	 * @exception FileNotFoundException Not found file csv.
-	 * @exception IOException If an input or output.
+	 * @exception Not found file csv.
+	 * @exception If an input or output.
 	 * @see Class DAOProducto.	  
 	 **/
 	public static void createProductosCSV(DAOProducto daoProducto) {

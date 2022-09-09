@@ -30,6 +30,9 @@ public class ClienteDerbyImpl extends ConexionDerby implements DAOCliente{
 		return listadoClientes;
 	}
 
+	/**
+	 * @exception SQLException error
+	 */
 	@Override
 	public void createCliente() {
 		String query = "CREATE TABLE cliente (id INT, name VARCHAR(30), email VARCHAR(100), PRIMARY KEY (id))";

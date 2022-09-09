@@ -13,7 +13,7 @@ private final static String Derby = "Derby";
  * @param db  the String that identifies the DB Engine
  * @return FactoryDB object
  * @see FactoryDerby interface
- * @see FactorySQL interface
+ * @see FactoryMySQL interface
  *
  */
 public static FactoryDB getConnetion(String db) {

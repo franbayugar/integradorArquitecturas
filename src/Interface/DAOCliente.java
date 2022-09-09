@@ -51,7 +51,7 @@ public interface DAOCliente {
 	 * Gets a list of clients with a specified email.
 	 * @param mail   the String email. 
 	 * @return ArrayList of Cliente.
-	 * @see Cliente class
+	 * @see Cliente class cliente
 	 */
 	public List<Cliente> getClienteByMail(String mail);
 

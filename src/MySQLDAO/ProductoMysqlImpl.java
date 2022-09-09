@@ -1,5 +1,7 @@
 package MySQLDAO;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 import Connection.ConexionMySql;
@@ -16,14 +18,32 @@ public class ProductoMysqlImpl extends ConexionMySql implements DAOProducto{
 
 	@Override
 	public void createProducto() {
-		// TODO Auto-generated method stub
-		
+		String query = "CREATE TABLE producto (id INT, name VARCHAR(45), value float, PRIMARY KEY (id))";
+		try {
+			super.getInstance().prepareStatement(query).execute();
+			super.getInstance().commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
-	public void insertProducto(String name, float value) {
-		// TODO Auto-generated method stub
-		
+	public void insertProducto(int id, String name, float value) {
+		String query = "INSERT INTO producto(id,name, value) values (?, ?, ?)";
+		PreparedStatement ps;
+		try {
+			ps = super.getInstance().prepareStatement(query);
+			ps.setInt(1, id);
+			ps.setString(2, name);
+			ps.setFloat(3, value);
+			ps.executeUpdate();
+			ps.close();
+			super.getInstance().commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

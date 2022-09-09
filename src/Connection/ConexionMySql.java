@@ -34,6 +34,7 @@ public class ConexionMySql  {
 		}
 		   try {
 			this.conexion = DriverManager.getConnection(this.uri, this.user, this.password);
+			this.conexion.setAutoCommit(false);
 		   }
 		   catch (SQLException e) {				
 			e.printStackTrace();

@@ -10,7 +10,9 @@ import MySQLDAO.FacturaProductoMysqlImpl;
 import MySQLDAO.ProductoMysqlImpl;
 
 public class FactoryMySQL extends FactoryDB{
-
+	public void createDB () {
+		
+	}
 	@Override
 	public DAOCliente getDAOCliente() {
 		return new ClienteMysqlImpl();

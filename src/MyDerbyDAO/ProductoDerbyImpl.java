@@ -21,7 +21,7 @@ public class ProductoDerbyImpl extends ConexionMySql implements DAOProducto{
 	}
 
 	@Override
-	public void insertProducto(String name, float value) {
+	public void insertProducto(int id, String name, float value) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -18,8 +18,7 @@ public static FactoryDB getConnetion(String db) {
 	default:
 		return null;
 	} 
-} 
-
+} 	
 	public abstract DAOCliente getDAOCliente();
 	public abstract DAOFactura getDAOFactura();
 	public abstract DAOProducto getDAOProducto();

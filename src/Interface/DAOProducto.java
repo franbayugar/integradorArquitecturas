@@ -9,7 +9,7 @@ public interface DAOProducto {
 	
 	public void createProducto();
 	// se incorpora derecho en BBDD
-	public void insertProducto(String name, float value);
+	public void insertProducto(int id, String name, float value);
 
 	public Producto getProducto(int idProducto);
 	

@@ -1,9 +1,5 @@
 package Factories;
 
-import java.sql.Connection;
-
-import Connection.ConexionDerby;
-import Connection.ConexionMySql;
 import Interface.DAOCliente;
 import Interface.DAOFactura;
 import Interface.DAOFacturaProducto;

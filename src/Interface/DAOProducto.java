@@ -2,7 +2,6 @@ package Interface;
 
 import java.util.List;
 
-import Modelo.Factura;
 import Modelo.Producto;
 
 public interface DAOProducto {

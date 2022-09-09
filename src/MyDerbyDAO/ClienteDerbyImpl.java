@@ -87,7 +87,7 @@ public class ClienteDerbyImpl extends ConexionDerby implements DAOCliente{
 			ps.setString(1, name);
 			ResultSet rs = ps.executeQuery();
 			ps.close();
-			ArrayList<Cliente> listado = new ArrayList();
+			ArrayList<Cliente> listado = new ArrayList<Cliente>();
 			while (rs.next()) {				
 				Cliente cliente = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3));
 				listado.add(cliente);
@@ -109,7 +109,7 @@ public class ClienteDerbyImpl extends ConexionDerby implements DAOCliente{
 			ps.setString(1, mail);
 			ResultSet rs = ps.executeQuery();
 			ps.close();
-			ArrayList<Cliente> listado = new ArrayList();
+			ArrayList<Cliente> listado = new ArrayList<Cliente>();
 			while (rs.next()) {				
 				Cliente cliente = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3));
 				listado.add(cliente);
@@ -124,13 +124,18 @@ public class ClienteDerbyImpl extends ConexionDerby implements DAOCliente{
 
 	@Override
 	public List<Cliente> getRankingFacturacion() {
-		String query = "SELECT * FROM cliente"; //TODO falta realizar la consulta que te da el rankind
+		String query = "SELECT c.* FROM "
+				+ "cliente c JOIN factura f on c.idCliente = f.idCliente"
+				+ "JOIN factura_producto fp on f.idFactura = fp.idFactura"
+				+ "JOIN producto p JOIN fp.idProducto = p.producto"
+				+ "GROUP BY fp.idCliente"
+				+ "ORDER BY SUM(p.valor) DESC";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			ps.close();
-			ArrayList<Cliente> listado = new ArrayList();
+			ArrayList<Cliente> listado = new ArrayList<Cliente>();
 			while (rs.next()) {				
 				Cliente cliente = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3));
 				listado.add(cliente);

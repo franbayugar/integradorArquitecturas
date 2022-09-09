@@ -3,12 +3,7 @@ package MyDerbyDAO;
 import java.util.List;
 
 import Connection.ConexionMySql;
-import Interface.DAOCliente;
-import Interface.DAOFactura;
-import Interface.DAOFacturaProducto;
 import Interface.DAOProducto;
-import Modelo.Cliente;
-import Modelo.Factura;
 import Modelo.Producto;
 
 public class ProductoDerbyImpl extends ConexionMySql implements DAOProducto{

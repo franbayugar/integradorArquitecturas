@@ -3,10 +3,7 @@ package MyDerbyDAO;
 import java.util.List;
 
 import Connection.ConexionDerby;
-import Interface.DAOCliente;
 import Interface.DAOFactura;
-import Interface.DAOFacturaProducto;
-import Interface.DAOProducto;
 import Modelo.Factura;
 
 public class FacturaDerbyImpl extends ConexionDerby implements DAOFactura{

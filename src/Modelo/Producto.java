@@ -30,6 +30,10 @@ public class Producto {
 	public int getIdProducto() {
 		return idProducto;
 	}
+	@Override
+	public String toString() {
+		return "Producto [idProducto=" + idProducto + ", nombre=" + nombre + ", valor=" + valor + "]";
+	}
 	
 	
 }

@@ -1,7 +1,9 @@
 package MySQLDAO;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import Connection.ConexionMySql;
@@ -12,8 +14,19 @@ public class FacturaMysqlImpl extends ConexionMySql implements DAOFactura{
 
 	@Override
 	public List<Factura> selectFacturas() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Factura> listadoFactura = new ArrayList<>();
+		String select = "SELECT * FROM factura";
+		try {
+			PreparedStatement ps = super.getInstance().prepareStatement(select);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Factura c = new Factura(rs.getInt(1), rs.getInt(2));
+				listadoFactura.add(c);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listadoFactura;
 	}
 
 	@Override
@@ -47,7 +60,19 @@ public class FacturaMysqlImpl extends ConexionMySql implements DAOFactura{
 
 	@Override
 	public Factura getFactura(int idFactura) {
-		// TODO Auto-generated method stub
+		String query = "SELECT * FROM factura WHERE id = ?";
+		PreparedStatement ps;
+		try {
+			ps = super.getInstance().prepareStatement(query);
+			ps.setInt(1, idFactura);
+			ResultSet rs = ps.executeQuery();
+			ps.close();
+			Factura factura = new Factura(rs.getInt(1), rs.getInt(2));
+			return factura;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

@@ -1,11 +1,14 @@
 package MySQLDAO;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import Connection.ConexionMySql;
 import Interface.DAOProducto;
+import Modelo.Cliente;
 import Modelo.Producto;
 
 public class ProductoMysqlImpl extends ConexionMySql implements DAOProducto{
@@ -48,15 +51,43 @@ public class ProductoMysqlImpl extends ConexionMySql implements DAOProducto{
 
 	@Override
 	public Producto getProducto(int idProducto) {
-		// TODO Auto-generated method stub
+		String query = "SELECT * FROM producto WHERE id = ?";
+		PreparedStatement ps;
+		try {
+			ps = super.getInstance().prepareStatement(query);
+			ps.setInt(1, idProducto);
+			ResultSet rs = ps.executeQuery();
+			ps.close();
+			Producto producto = new Producto(rs.getInt(1), rs.getString(2), rs.getFloat(3));
+			return producto;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	@Override
 	public Producto getMayorRecaudacion() {
-		// TODO Auto-generated method stub
+		String query = "SELECT p.*,(SUM(p.value * fp.cantidad))as total FROM factura_producto as fp"
+				+ "	JOIN producto as p ON p.id = fp.idProducto"
+				+ "	GROUP BY idProducto"
+				+ "	ORDER BY total DESC"
+				+ "	LIMIT 1";
+		PreparedStatement ps;
+		try {
+			ps = super.getInstance().prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			rs.next();				
+			Producto producto = new Producto(rs.getInt(1), rs.getString(2), rs.getFloat(3));
+			
+			return producto;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
-
+	
 
 }

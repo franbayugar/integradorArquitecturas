@@ -8,6 +8,7 @@ package main;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.csv.*;
 
@@ -17,23 +18,26 @@ import Interface.DAOFactura;
 import Interface.DAOFacturaProducto;
 import Interface.DAOProducto;
 import Modelo.Cliente;
+import Modelo.Producto;
 
 public class Main {
 
 	public static void main(String[] args) {
-		String dbName = "MySQL";
+		String dbName = "Derby";
 		FactoryDB db = FactoryDB.getConnetion(dbName);
 
-		createProductosCSV(db.getDAOProducto());
+		//createProductosCSV(db.getDAOProducto());
 		createClientesCSV(db.getDAOCliente());
 		createFacturasCSV(db.getDAOFactura());
 		createFacturaProductoCSV(db.getDAOFacturaProducto());
 		
-		Cliente c = db.getDAOCliente().getCliente(8);
-		System.out.println(c);
-
-
-	}
+		//Cliente c = db.getDAOCliente().getCliente(8);
+		//System.out.println(c);
+		//Producto p = db.getDAOProducto().getMayorRecaudacion();
+		//System.out.println(p.toString());
+		//List<Cliente> lisCli= db.getDAOCliente().getRankingFacturacion();
+		
+	}	
 	
 	 /**
 	 * This method populate the table FacturaProducto from a csv file.

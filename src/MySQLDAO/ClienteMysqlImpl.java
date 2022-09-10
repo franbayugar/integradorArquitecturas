@@ -70,7 +70,7 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 			ps = super.getInstance().prepareStatement(query);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
-			ps.close();
+			rs.next();
 			Cliente cliente = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3));
 			return cliente;
 		} catch (SQLException e) {
@@ -149,4 +149,7 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 		return null;
 	}
 
+	
+	
+	
 }

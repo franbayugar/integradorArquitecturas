@@ -29,7 +29,8 @@ public class Main {
 		createFacturasCSV(db.getDAOFactura());
 		createFacturaProductoCSV(db.getDAOFacturaProducto());
 		
-		Cliente c = db.getDAOCliente().getCliente(1);
+		Cliente c = db.getDAOCliente().getCliente(8);
+		System.out.println(c);
 
 
 	}

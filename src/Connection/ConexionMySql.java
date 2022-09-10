@@ -11,7 +11,7 @@ public class ConexionMySql  {
 	private String uri = "jdbc:mysql://localhost:3306/bataman";
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private String user = "root";
-	private String password = "root";
+	private String password = "password";
 		
 	public ConexionMySql() {
 		this.conexion=this.getInstance();
@@ -23,7 +23,8 @@ public class ConexionMySql  {
 	 * @see Connection JAVA interface
 	 */
 	public Connection getInstance() {
-		 if (conexion==null) connect();			  	 
+		 if (conexion==null) connect();		
+		 
 		 return this.conexion;
 	}
 

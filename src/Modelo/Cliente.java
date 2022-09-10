@@ -31,6 +31,11 @@ public class Cliente {
 	public int getIdCliente() {
 		return idCliente;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", name=" + name + ", email=" + email + "]";
+	}
 	
 	
 

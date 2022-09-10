@@ -26,7 +26,7 @@ public class Main {
 		String dbName = "Derby";
 		FactoryDB db = FactoryDB.getConnetion(dbName);
 
-		//createProductosCSV(db.getDAOProducto());
+		createProductosCSV(db.getDAOProducto());
 		createClientesCSV(db.getDAOCliente());
 		createFacturasCSV(db.getDAOFactura());
 		createFacturaProductoCSV(db.getDAOFacturaProducto());

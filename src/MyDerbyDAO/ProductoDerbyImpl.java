@@ -6,12 +6,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Connection.ConexionDerby;
 import Connection.ConexionMySql;
 import Interface.DAOProducto;
 import Modelo.Cliente;
 import Modelo.Producto;
 
-public class ProductoDerbyImpl extends ConexionMySql implements DAOProducto{
+public class ProductoDerbyImpl extends ConexionDerby implements DAOProducto{
 
 	@Override
 	public List<Producto> selectProductos() {

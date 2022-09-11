@@ -65,9 +65,9 @@ public class ProductoDerbyImpl extends ConexionDerby implements DAOProducto{
 
 	@Override
 	public Producto getMayorRecaudacion() {
-		String query = "SELECT p.*,(SUM(p.value * fp.cantidad))as total FROM factura_producto fp"
+		String query = "SELECT p.id, p.name, (SUM(p.value * fp.cantidad))as total FROM factura_producto fp"
 				+ "	JOIN producto p ON p.id = fp.idProducto"
-				+ "	GROUP BY fp.idProducto"
+				+ "	GROUP BY p.id, p.name"
 				+ "	ORDER BY total DESC"
 				+ "	fetch first 1 rows only";
 		PreparedStatement ps;

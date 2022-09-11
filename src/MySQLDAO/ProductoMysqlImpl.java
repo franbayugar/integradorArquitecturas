@@ -21,7 +21,7 @@ public class ProductoMysqlImpl extends ConexionMySql implements DAOProducto{
 
 	@Override
 	public void createProducto() {
-		String query = "CREATE TABLE producto (id INT, name VARCHAR(45), value float, PRIMARY KEY (id))";
+		String query = "CREATE TABLE IF NOT EXISTS  producto (id INT, name VARCHAR(45), value float, PRIMARY KEY (id))";
 		try {
 			super.getInstance().prepareStatement(query).execute();
 			super.getInstance().commit();
@@ -33,7 +33,7 @@ public class ProductoMysqlImpl extends ConexionMySql implements DAOProducto{
 
 	@Override
 	public void insertProducto(int id, String name, float value) {
-		String query = "INSERT INTO producto(id,name, value) values (?, ?, ?)";
+		String query = "INSERT IGNORE INTO producto(id,name, value) values (?, ?, ?)";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);

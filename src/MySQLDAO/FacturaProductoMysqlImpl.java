@@ -12,7 +12,7 @@ public class FacturaProductoMysqlImpl extends ConexionMySql implements DAOFactur
 
 	@Override
 	public void createFacturaProducto() {
-		String query = "CREATE TABLE factura_producto (idFactura INT, idProducto INT, cantidad INT, PRIMARY KEY (idFactura, idProducto))";
+		String query = "CREATE TABLE IF NOT EXISTS  factura_producto (idFactura INT, idProducto INT, cantidad INT, PRIMARY KEY (idFactura, idProducto))";
 		try {
 			super.getInstance().prepareStatement(query).execute();
 			super.getInstance().commit();
@@ -24,7 +24,7 @@ public class FacturaProductoMysqlImpl extends ConexionMySql implements DAOFactur
 
 	@Override
 	public void insertFacturaProducto(int idFactura, int idProducto, int cantidad) {
-		String query = "INSERT INTO factura_producto values (?, ?, ?)";
+		String query = "INSERT IGNORE INTO factura_producto values (?, ?, ?)";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);

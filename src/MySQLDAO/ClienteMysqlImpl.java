@@ -32,7 +32,7 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 
 	@Override
 	public void createCliente() {
-		String query = "CREATE TABLE cliente (id INT, name VARCHAR(30), email VARCHAR(100), PRIMARY KEY (id))";
+		String query = "CREATE TABLE IF NOT EXISTS  cliente (id INT, name VARCHAR(30), email VARCHAR(100), PRIMARY KEY (id))";
 		try {
 			super.getInstance().prepareStatement(query).execute();
 			super.getInstance().commit();
@@ -45,7 +45,7 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 
 	@Override
 	public void insertCliente(int id, String name, String mail) {
-		String query = "INSERT INTO cliente values (?, ?, ?)";
+		String query = "INSERT IGNORE INTO cliente values (?, ?, ?)";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);
@@ -125,22 +125,22 @@ public class ClienteMysqlImpl extends ConexionMySql implements DAOCliente{
 
 	@Override
 	public ArrayList<Cliente> getRankingFacturacion() {
-		String query = "SELECT c.*, (SUM(p.value * fp.cantidad))as total FROM cliente as c"
-				+ "JOIN factura f ON c.id = f.idCliente"
-				+ "JOIN factura_producto fp ON fp.idFactura=f.idFactura"
-				+ "JOIN producto p ON p.id=fp.idProducto"
-				+ "GROUP BY c.id "
-				+ "ORDER BY total DESC";
+		String query = "SELECT c.*, (SUM(p.value * fp.cantidad))as total FROM cliente c"
+				+ " JOIN factura f ON c.id = f.idCliente"
+				+ " JOIN factura_producto fp ON fp.idFactura=f.idFactura"
+				+ " JOIN producto p ON p.id=fp.idProducto"
+				+ " GROUP BY c.id "
+				+ " ORDER BY total DESC";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
-			ps.close();
 			ArrayList<Cliente> listado = new ArrayList<Cliente>();
 			while (rs.next()) {				
 				Cliente cliente = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3));
 				listado.add(cliente);
 			}
+			ps.close();
 			return listado;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

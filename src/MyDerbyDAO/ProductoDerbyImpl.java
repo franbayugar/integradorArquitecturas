@@ -65,11 +65,11 @@ public class ProductoDerbyImpl extends ConexionDerby implements DAOProducto{
 
 	@Override
 	public Producto getMayorRecaudacion() {
-		String query = "SELECT p.*,(SUM(p.value * fp.cantidad))as total FROM factura_producto as fp"
-				+ "	JOIN producto as p ON p.id = fp.idProducto"
-				+ "	GROUP BY idProducto"
+		String query = "SELECT p.*,(SUM(p.value * fp.cantidad))as total FROM factura_producto fp"
+				+ "	JOIN producto p ON p.id = fp.idProducto"
+				+ "	GROUP BY fp.idProducto"
 				+ "	ORDER BY total DESC"
-				+ "	LIMIT 1";
+				+ "	fetch first 1 rows only";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);

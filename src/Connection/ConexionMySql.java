@@ -11,7 +11,7 @@ public class ConexionMySql  {
 	private String uri = "jdbc:mysql://localhost:3306/bataman";
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private String user = "root";
-	private String password = "password";
+	private String password = "root";
 		
 	public ConexionMySql() {
 		this.conexion=this.getInstance();

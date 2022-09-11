@@ -31,7 +31,7 @@ public class FacturaMysqlImpl extends ConexionMySql implements DAOFactura{
 
 	@Override
 	public void createFactura() {
-		String query = "CREATE TABLE factura (idFactura INT, idCliente INT, PRIMARY KEY (idFactura, idCliente))";
+		String query = "CREATE TABLE IF NOT EXISTS  factura (idFactura INT, idCliente INT, PRIMARY KEY (idFactura, idCliente))";
 		try {
 			super.getInstance().prepareStatement(query).execute();
 			super.getInstance().commit();
@@ -43,7 +43,7 @@ public class FacturaMysqlImpl extends ConexionMySql implements DAOFactura{
 
 	@Override
 	public void insertFactura(int idFactura, int idCliente) {
-		String query = "INSERT INTO factura values (?, ?)";
+		String query = "INSERT IGNORE INTO factura values (?, ?)";
 		PreparedStatement ps;
 		try {
 			ps = super.getInstance().prepareStatement(query);

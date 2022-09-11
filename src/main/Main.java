@@ -31,11 +31,11 @@ public class Main {
 		createFacturasCSV(db.getDAOFactura());
 		createFacturaProductoCSV(db.getDAOFacturaProducto());
 		
-		//Cliente c = db.getDAOCliente().getCliente(8);
-		//System.out.println(c);
-		//Producto p = db.getDAOProducto().getMayorRecaudacion();
-		//System.out.println(p.toString());
-		//List<Cliente> lisCli= db.getDAOCliente().getRankingFacturacion();
+		
+		Producto p = db.getDAOProducto().getMayorRecaudacion();
+		System.out.println("Producto que mas recaudo: "+p.toString());
+		List<Cliente> lisCli= db.getDAOCliente().getRankingFacturacion();
+		System.out.println(lisCli);
 		
 	}	
 	

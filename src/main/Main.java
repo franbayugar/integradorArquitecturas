@@ -23,7 +23,7 @@ import Modelo.Producto;
 public class Main {
 
 	public static void main(String[] args) {
-		String dbName = "Derby";
+		String dbName = "MySQL";
 		FactoryDB db = FactoryDB.getConnetion(dbName);
 
 		createProductosCSV(db.getDAOProducto());

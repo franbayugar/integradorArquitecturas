@@ -2,9 +2,12 @@ package Estructura;
 
 import java.util.List;
 
+@Entity
 public class Estudiante {
 
+	@Id
 	private int id;
+	@ManyToOne //(mappedby ??)
 	private int num_libreta;
 	private String nombres;
 	private String apellido;
@@ -12,9 +15,11 @@ public class Estudiante {
 	private String genero;
 	private int dni;
 	private String ciudadResidencia;
+
+	//@
 	private List<Carrera> carreras;
 	
-	private Estudiante(String nombres, String apellido, int edad, String genero, int dni,String ciudadResidencia) {
+	public Estudiante(String nombres, String apellido, int edad, String genero, int dni,String ciudadResidencia) {
 		
 		//id (autoincremental automatic)
 		this.nombres = nombres;

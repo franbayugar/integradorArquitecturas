@@ -1,11 +1,15 @@
 package Estructura;
 
+@Entity
 public class Carrera {
-	private int id;
+	
+	@Id
+	private int id;	
+	@ManyToOne //(mappedby ??)
 	private String nombre;
 	private int duracion;
 	
-	private Carrera(String nombre, int duracion) {	
+	public Carrera(String nombre, int duracion) {	
 		//id (autoincremental automatic)
 		this.nombre = nombre;
 		this.duracion = duracion;

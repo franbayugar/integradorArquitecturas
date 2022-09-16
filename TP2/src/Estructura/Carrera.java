@@ -1,12 +1,17 @@
 package Estructura;
 
 @Entity
+@Table(name="Carrera")
 public class Carrera {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;	
-	@ManyToOne //(mappedby ??)
+	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_estudiante) ??
+	
+	@Column(name="Nombre Carrera")
 	private String nombre;
+	@Column(name="Duracion")
 	private int duracion;
 	
 	public Carrera(String nombre, int duracion) {	

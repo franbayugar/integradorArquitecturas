@@ -15,7 +15,8 @@ import javax.persistence.Table;
 public class Estudiante {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_carrera) ??
 	
@@ -105,5 +106,9 @@ public class Estudiante {
 		this.ciudadResidencia = ciudadResidencia;
 	}
 		
+	@Override
+	public String toString() {
+		return "Estudiante : "+ id + " // " + apellido + ", "+ nombres + ", dni: " + dni + ", ciudad de residencia: " + ciudadResidencia;  
+	}
 
 }

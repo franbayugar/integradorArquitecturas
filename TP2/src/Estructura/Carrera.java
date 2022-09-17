@@ -13,6 +13,7 @@ public class Carrera {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;	
 	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_estudiante) ??
 	
@@ -51,6 +52,11 @@ public class Carrera {
 
 	public void setDuracion(int duracion) {
 		this.duracion = duracion;
+	}
+	
+	@Override
+	public String toString() {
+		return "Carrera : "+ nombre + ", duracion : "+ duracion;  
 	}
 
 }

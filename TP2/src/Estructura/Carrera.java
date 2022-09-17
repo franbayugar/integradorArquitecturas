@@ -21,6 +21,8 @@ public class Carrera {
 	@Column(name="Duracion")
 	private int duracion;
 	
+	public Carrera() {} //JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
+	
 	public Carrera(String nombre, int duracion) {	
 		//id (autoincremental automatic)
 		this.nombre = nombre;

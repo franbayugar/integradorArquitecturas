@@ -35,6 +35,8 @@ public class Estudiante {
 	//@
 	private List<Carrera> carreras;
 	
+	public Estudiante() {} //JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
+	
 	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, int dni,String ciudadResidencia) {
 		
 		//id (autoincremental automatic)

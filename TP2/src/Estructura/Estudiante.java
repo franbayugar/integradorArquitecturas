@@ -1,6 +1,14 @@
 package Estructura;
 
+import java.util.Date;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="Estudiante")
@@ -16,7 +24,7 @@ public class Estudiante {
 	@Column(name="Apellido")
 	private String apellido;
 	@Column(name="Fecha_Nacimiento")
-	private Date Fecha_Nacimiento;
+	private Date fechaNacimiento;
 	@Column(name="Genero")
 	private String genero;
 	@Column(name="Dni")
@@ -27,12 +35,12 @@ public class Estudiante {
 	//@
 	private List<Carrera> carreras;
 	
-	public Estudiante(String nombres, String apellido, int edad, String genero, int dni,String ciudadResidencia) {
+	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, int dni,String ciudadResidencia) {
 		
 		//id (autoincremental automatic)
 		this.nombres = nombres;
 		this.apellido = apellido;
-		this.edad = edad;
+		this.fechaNacimiento = fechaNacimiento;
 		this.genero = genero;
 		this.dni = dni;
 		this.ciudadResidencia = ciudadResidencia;
@@ -63,12 +71,12 @@ public class Estudiante {
 		this.apellido = apellido;
 	}
 
-	public int getEdad() {
-		return edad;
+	public Date getfechaNacimiento() {
+		return fechaNacimiento;
 	}
 
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void setfechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public String getGenero() {

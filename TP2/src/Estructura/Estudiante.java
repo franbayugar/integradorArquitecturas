@@ -2,60 +2,48 @@ package Estructura;
 
 import java.util.Date;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="Estudiante")
 public class Estudiante {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@Id	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int num_libreta;
 	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_carrera) ??
 	
-	@Column(name="Nombres")
+	@Column(name="Nombres",nullable=false)	
 	private String nombres;
-	@Column(name="Apellido")
+	@Column(name="Apellido",nullable=false)
 	private String apellido;
-	@Column(name="Fecha_Nacimiento")
+	@Column(name="Fecha_Nacimiento",nullable=false)
 	private Date fechaNacimiento;
-	@Column(name="Genero")
+	@Column(name="Genero",nullable=false)
 	private String genero;
-	@Column(name="Dni")
+	@Column(name="Dni",nullable=false)
 	private int dni;
-	@Column(name="Ciudad_Residencia")
-	private String ciudadResidencia; //Podría sera codigo postal
-
-	//@
-	private List<Carrera> carreras;
+	@Column(name="Ciudad_Residencia",nullable=false)
+	private String ciudadResidencia;
 	
-	public Estudiante() {} //JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
+	//JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
+	public Estudiante() {
+		//super();
+	} 
 	
 	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, int dni,String ciudadResidencia) {
-		
-		//id (autoincremental automatic)
+		//super();
 		this.nombres = nombres;
 		this.apellido = apellido;
 		this.fechaNacimiento = fechaNacimiento;
 		this.genero = genero;
 		this.dni = dni;
 		this.ciudadResidencia = ciudadResidencia;
-		//this.carreras = new List<Carrera>();
+		
 	}
 
 	public int getNum_libreta() {
-		return id;
-	}
-
-	public void setNum_libreta(int num_libreta) {
-		this.id = num_libreta;
+		return num_libreta;
 	}
 
 	public String getNombres() {
@@ -108,7 +96,7 @@ public class Estudiante {
 		
 	@Override
 	public String toString() {
-		return "Estudiante : "+ id + " // " + apellido + ", "+ nombres + ", dni: " + dni + ", ciudad de residencia: " + ciudadResidencia;  
+		return "Estudiante : "+ num_libreta + " // " + apellido + ", "+ nombres + ", dni: " + dni + ", ciudad de residencia: " + ciudadResidencia;  
 	}
 
 }

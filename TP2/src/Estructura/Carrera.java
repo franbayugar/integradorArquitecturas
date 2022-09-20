@@ -1,42 +1,34 @@
 package Estructura;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="Carrera")
 public class Carrera {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;	
-	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_estudiante) ??
-	
-	@Column(name="Nombre Carrera")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id_carrera;	
+	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_estudiante) ??	
+	@Column(name="Nombre_Carrera",nullable=false)
 	private String nombre;
-	@Column(name="Duracion")
+	@Column(name="Duracion",nullable=false)
 	private int duracion;
 	
-	public Carrera() {} //JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
+	//JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
+	public Carrera() {
+		//super();
+	} 
 	
 	public Carrera(String nombre, int duracion) {	
-		//id (autoincremental automatic)
+		//super();
 		this.nombre = nombre;
 		this.duracion = duracion;
 	}
 
 	public int getId_carrera() {
-		return id;
-	}
-
-	public void setId_carrera(int id_carrera) {
-		this.id = id_carrera;
-	}
+		return id_carrera;
+	}	
 
 	public String getNombre() {
 		return nombre;

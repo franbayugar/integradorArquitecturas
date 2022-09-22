@@ -1,4 +1,4 @@
-package Estructura;
+package Entity;
 
 import java.util.Date;
 import java.util.List;
@@ -22,9 +22,9 @@ public class Cursa {
 	@Column(name="graduado",nullable=false)
 	private boolean graduado;
 	
-	@OneToOne
+	@ManyToOne
 	private Estudiante estudiante;
-	@OneToOne
+	@ManyToOne
 	private Carrera carrera;
 	
 	//JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.

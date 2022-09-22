@@ -1,4 +1,4 @@
-package Estructura;
+package Entity;
 
 import javax.persistence.*;
 

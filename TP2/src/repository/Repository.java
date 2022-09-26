@@ -8,7 +8,7 @@ public interface Repository <Entity , ID extends Serializable> {
 
 	public Entity findById(int id);
 	
-	//public Entity create(Entity entity);
+	public void create(Entity entity);
 	
 	//public Entity delete(Integer id);
 	

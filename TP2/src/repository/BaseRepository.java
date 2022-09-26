@@ -39,5 +39,13 @@ public class BaseRepository<Entity, ID extends Serializable> implements Reposito
 		Entity entity = this.em.find(clase, id);
 		return entity;
 		
+	}
+
+	@Override
+	public void create(Entity entity) {
+		this.em.getTransaction().begin();
+		this.em.persist(entity);
+		this.em.getTransaction().commit();
+		
 	}	
 }

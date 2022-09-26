@@ -32,10 +32,17 @@ public class RepoEstudiante extends BaseRepository <Estudiante,Integer> {
 		//return (Entity) res;
 	}
 
-	/*
-	 * @Override public Entity create(Entity entity) { // TODO Auto-generated method
-	 * stub return null; }
-	 * 
+	
+	  @Override 
+	  public void create(Estudiante entity) {
+		  super.create(entity);
+			  // TODO Auto-generated method	  stub 
+			   
+	 }
+	
+	  
+	  /**  }
+	
 	 * @Override public Entity delete(Integer id) { // TODO Auto-generated method
 	 * stub return null; }
 	 * 

@@ -6,9 +6,11 @@
 package main;
 
 import Entity.Carrera;
+import Entity.Cursa;
 import Entity.Estudiante;
 import repository.BaseRepository;
 import repository.RepoCarrera;
+import repository.RepoCursa;
 import repository.RepoEstudiante;
 
 import java.io.FileNotFoundException;
@@ -32,6 +34,7 @@ public class Main {
 		
 		RepoEstudiante re = new RepoEstudiante();
 		RepoCarrera rc = new RepoCarrera();
+		RepoCursa rcu = new RepoCursa();
 		
 		LoadTableEstudiante(re);
 		LoadTableCarrera(rc);
@@ -40,12 +43,16 @@ public class Main {
 		//DateFormat dateParser = DateFormat.getDateInstance(DateFormat.SHORT);
         SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
 		Estudiante es1= new Estudiante("Luis","Mas",dateParser.parse(date_time),"Hombrecito",22333444,"Tres Arroyos");
-	//	re.create(es1);
+		re.create(es1);
 	//	System.out.println(re.findById(1).toString());
 		Carrera ca=new Carrera ("Enfermeria", 2);
-		//rc.create(ca);
-		re.delete(26);
-		rc.delete(20);
+		rc.create(ca);
+		System.out.println(ca.getId_carrera());
+		Cursa cu = new Cursa(es1.getNum_libreta(), ca.getId_carrera(), dateParser.parse(date_time), false);
+		
+		rcu.create(cu);
+		//re.delete(26);
+		//rc.delete(20);
 	//	System.out.println(rc.findById(13).toString());
 				
 	}	

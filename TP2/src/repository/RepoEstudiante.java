@@ -51,6 +51,12 @@ public class RepoEstudiante extends BaseRepository<Estudiante, Integer> {
 		TypedQuery<Estudiante> typedQuery = super.em.createQuery("SELECT u FROM Estudiante u ORDER BY u.apellido DESC",Estudiante.class);
 		return typedQuery.getResultList();
 	}
+	
+	public List<Estudiante> getEstudiantesByGenero(String genero){
+		TypedQuery<Estudiante> typedQuery = super.em.createQuery("SELECT u FROM Estudiante u WHERE u.genero =:genero",Estudiante.class);
+		typedQuery.setParameter("genero", genero);
+		return typedQuery.getResultList();
+	}
 
 	/*
 	 * * @Override public Entity update(Integer id, Entity entity) { // TODO

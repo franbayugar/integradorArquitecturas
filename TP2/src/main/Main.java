@@ -38,13 +38,35 @@ public class Main {
 		String date_time = "11/27/2020";
         SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
 		Estudiante es1= new Estudiante("Luis","Mas",dateParser.parse(date_time),"Hombrecito",22333444,"Tres Arroyos");
-		re.create(es1);
-		Carrera ca=new Carrera ("Enfermeria", 2);
-		rc.create(ca);
-		Cursa cu = new Cursa(es1, ca, dateParser.parse(date_time), false);
-		rcu.create(cu);
-		System.out.println(re.getEstudiantes());
+		//A. DAR DE ALTA UN ESTUDIANTE
+	//	re.create(es1);
 
+	//	Carrera ca=new Carrera ("Enfermeria", 2);
+//		rc.create(ca);
+		
+		//B. MATRICULAR UN ESTUDIANTE EN UNA CARRERA
+	//	Cursa cu = new Cursa(es1, ca, dateParser.parse(date_time), false);
+	//	rcu.create(cu);
+		
+		//C. OBTENER TODOS LOS ESTUDIANTES ORDENADOS ALFABETICAMENTE POR APELLIDO (DESC)
+		//System.out.println(re.getEstudiantes());
+		
+		//D. OBTENER POR NUMERO DE LIBRETA
+		//System.out.println(re.findById(1));
+		
+		//E. RECUPERAR ESTUDIANTES EN BASE A SU GENERO
+		//System.out.println(re.getEstudiantesByGenero("F"));
+
+		//F. RECUPERAR CARRERAS CON ESTUDIANTES INSCRIPTOS Y ORDENAR POR CANTIDAD DE INSCRIPTOS
+		//System.out.println(rc.getCarrerasConEstudiantesInscriptos());
+
+		/*
+		 * 
+		 * 
+		 * SELECT COUNT(cu.carrera_id_carrera) cantidad, c.Nombre_carrera FROM Cursa cu JOIN Carrera c ON cu.carrera_id_carrera = c.id_carrera 
+GROUP BY cu.carrera_id_carrera, c.Nombre_carrera
+ORDER  BY cantidad DESC
+		 */
 				
 	}	
 

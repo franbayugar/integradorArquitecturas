@@ -41,12 +41,15 @@ public class RepoEstudiante extends BaseRepository <Estudiante,Integer> {
 	 }
 	
 	  
-	  /**  }
+	  
 	
-	 * @Override public Entity delete(Integer id) { // TODO Auto-generated method
-	 * stub return null; }
-	 * 
-	 * @Override public Entity update(Integer id, Entity entity) { // TODO
+	  @Override 
+	  public void delete(int id) {
+		  super.delete(id);
+		  }
+	  
+	  
+	/* * @Override public Entity update(Integer id, Entity entity) { // TODO
 	 * Auto-generated method stub return null; }
 	 * 
 	 * @Override public Object create(Object entity) { // TODO Auto-generated method

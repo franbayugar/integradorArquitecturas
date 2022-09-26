@@ -47,5 +47,20 @@ public class BaseRepository<Entity, ID extends Serializable> implements Reposito
 		this.em.persist(entity);
 		this.em.getTransaction().commit();
 		
-	}	
+	}
+
+	
+	@Override
+	public void delete(int id) {
+		
+			Entity entity= this.em.find(clase, id);
+			this.em.getTransaction().begin();
+			this.em.remove(entity);
+			this.em.getTransaction().commit();
+			
+	}
+		
+		
 }
+
+	

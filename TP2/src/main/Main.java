@@ -25,9 +25,9 @@ public class Main {
         SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
 		
 		Estudiante es1= new Estudiante("Pepe","Lopez",dateParser.parse(date_time),"Hombrecito",22333444,"Tres Arroyos");
-		re.create(es1);
+	//	re.create(es1);
 		
-		//System.out.println(re.findById(1).toString());
+		System.out.println(re.findById(1).toString());
 		
 		RepoCarrera rc = new RepoCarrera();
 		
@@ -35,7 +35,9 @@ public class Main {
 		
 		rc.create(ca);
 		
-		System.out.println(rc.findById(1).toString());
+		re.delete(1);
+		
+		System.out.println(rc.findById(13).toString());
 		
 		
 				

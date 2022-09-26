@@ -10,7 +10,7 @@ public interface Repository <Entity , ID extends Serializable> {
 	
 	public void create(Entity entity);
 	
-	//public Entity delete(Integer id);
+	public void delete(int id);
 	
 	//public Entity update(Integer id, Entity entity);
 	

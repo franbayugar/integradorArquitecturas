@@ -76,7 +76,7 @@ public class Main {
 		}
 		//e.create();
 		for(CSVRecord row: parser) {
-			Estudiante est=new Estudiante (String.valueOf(row.get("nombres")), String.valueOf(row.get("apellido")), new Date(row.get("fecha_Nacimiento")), String.valueOf(row.get("genero")), Double.valueOf(row.get("dni")), String.valueOf(row.get("ciudad_Residencia"))) ;
+			Estudiante est=new Estudiante (String.valueOf(row.get("nombres")), String.valueOf(row.get("apellido")), new Date(row.get("fecha_Nacimiento")), String.valueOf(row.get("genero")), Integer.valueOf(row.get("dni")), String.valueOf(row.get("ciudad_Residencia"))) ;
 			es.create(est) ;
 
 		}

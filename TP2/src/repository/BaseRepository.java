@@ -46,6 +46,7 @@ public class BaseRepository<Entity, ID extends Serializable> implements Reposito
 		this.em.getTransaction().begin();
 		this.em.persist(entity);
 		this.em.getTransaction().commit();
+		this.em.close();
 		
 	}
 
@@ -57,7 +58,7 @@ public class BaseRepository<Entity, ID extends Serializable> implements Reposito
 			this.em.getTransaction().begin();
 			this.em.remove(entity);
 			this.em.getTransaction().commit();
-			
+			this.em.close();
 	}
 		
 		

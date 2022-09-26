@@ -43,10 +43,11 @@ public class BaseRepository<Entity, ID extends Serializable> implements Reposito
 
 	@Override
 	public void create(Entity entity) {
+		
 		this.em.getTransaction().begin();
 		this.em.persist(entity);
 		this.em.getTransaction().commit();
-		this.em.close();		
+		//this.em.close();		
 	}
 
 	

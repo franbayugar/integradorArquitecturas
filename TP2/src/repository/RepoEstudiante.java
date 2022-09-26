@@ -45,6 +45,7 @@ public class RepoEstudiante extends BaseRepository <Estudiante,Integer> {
 	
 	  @Override 
 	  public void delete(int id) {
+		 
 		  super.delete(id);
 		  }
 	  

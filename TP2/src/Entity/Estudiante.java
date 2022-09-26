@@ -22,7 +22,7 @@ public class Estudiante {
 	@Column(name="Genero",nullable=false)
 	private String genero;
 	@Column(name="Dni",nullable=false)
-	private long dni;
+	private double dni;
 	@Column(name="Ciudad_Residencia",nullable=false)
 	private String ciudadResidencia;
 	
@@ -31,7 +31,7 @@ public class Estudiante {
 		//super();
 	} 
 	
-	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, long dni,String ciudadResidencia) {
+	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, double dni,String ciudadResidencia) {
 		//super();
 		this.nombres = nombres;
 		this.apellido = apellido;
@@ -78,7 +78,7 @@ public class Estudiante {
 		this.genero = genero;
 	}
 
-	public long getDni() {
+	public double getDni() {
 		return dni;
 	}
 

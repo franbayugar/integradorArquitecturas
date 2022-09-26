@@ -32,24 +32,19 @@ public class Main {
 		RepoCarrera rc = new RepoCarrera();
 		RepoCursa rcu = new RepoCursa();
 		
-		LoadTableEstudiante(re);
-		LoadTableCarrera(rc);
+	//	LoadTableEstudiante(re);
+	//	LoadTableCarrera(rc);
 		
 		String date_time = "11/27/2020";
-		//DateFormat dateParser = DateFormat.getDateInstance(DateFormat.SHORT);
         SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
 		Estudiante es1= new Estudiante("Luis","Mas",dateParser.parse(date_time),"Hombrecito",22333444,"Tres Arroyos");
 		re.create(es1);
-	//	System.out.println(re.findById(1).toString());
 		Carrera ca=new Carrera ("Enfermeria", 2);
 		rc.create(ca);
-		System.out.println(ca.getId_carrera());
 		Cursa cu = new Cursa(es1, ca, dateParser.parse(date_time), false);
-		
 		rcu.create(cu);
-		//re.delete(26);
-		//rc.delete(20);
-	//	System.out.println(rc.findById(13).toString());
+		System.out.println(re.getEstudiantes());
+
 				
 	}	
 

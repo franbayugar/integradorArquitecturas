@@ -1,17 +1,18 @@
 package repository;
 
 import Entity.Estudiante;
+
 import java.io.Serializable;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
-public class RepoEstudiante extends BaseRepository <Estudiante,Integer> {
-	
-	
+public class RepoEstudiante extends BaseRepository<Estudiante, Integer> {
+
 	public RepoEstudiante() {
-		super(Estudiante.class,Integer.class);
+		super(Estudiante.class, Integer.class);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -20,37 +21,39 @@ public class RepoEstudiante extends BaseRepository <Estudiante,Integer> {
 //		String jpql= "SELECT a FROM Estudiante a WHERE num_libreta=?1";		
 //		Query typedQuery =  em.createQuery(jpql,Estudiante.class);
 //		typedQuery.setParameter(1, id);
-		//System.out.println(typedQuery.getSingleResult());
-		//Estudiante res=(Estudiante) typedQuery.getSingleResult();
-		
-		//Date fecha = res.getfechaNacimiento();
-		//Estudiante est= new Estudiante(res.getNombres(),res.getApellido(),fecha, res.getGenero(),res.getDni(),res.getCiudadResidencia());
-		
-		return (Estudiante) super.findById(id);
-		//return (Entity)  em.find(Estudiante.class,id);
+		// System.out.println(typedQuery.getSingleResult());
+		// Estudiante res=(Estudiante) typedQuery.getSingleResult();
 
-		//return (Entity) res;
+		// Date fecha = res.getfechaNacimiento();
+		// Estudiante est= new Estudiante(res.getNombres(),res.getApellido(),fecha,
+		// res.getGenero(),res.getDni(),res.getCiudadResidencia());
+
+		return (Estudiante) super.findById(id);
+		// return (Entity) em.find(Estudiante.class,id);
+
+		// return (Entity) res;
 	}
 
+	@Override
+	public void create(Estudiante entity) {
+		super.create(entity);
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int id) {
+
+		super.delete(id);
+	}
 	
-	  @Override 
-	  public void create(Estudiante entity) {
-		  super.create(entity);
-			  // TODO Auto-generated method	  stub 
-			   
-	 }
-	
-	  
-	  
-	
-	  @Override 
-	  public void delete(int id) {
-		 
-		  super.delete(id);
-		  }
-	  
-	  
-	/* * @Override public Entity update(Integer id, Entity entity) { // TODO
+	public List<Estudiante> getEstudiantes(){
+		TypedQuery<Estudiante> typedQuery = super.em.createQuery("SELECT u FROM Estudiante u ORDER BY u.apellido DESC",Estudiante.class);
+		return typedQuery.getResultList();
+	}
+
+	/*
+	 * * @Override public Entity update(Integer id, Entity entity) { // TODO
 	 * Auto-generated method stub return null; }
 	 * 
 	 * @Override public Object create(Object entity) { // TODO Auto-generated method

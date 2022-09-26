@@ -1,21 +1,21 @@
-id,nombre_carrera,duracion
-1,VP Product Management,1
-2,Geological Engineer,3
-3,Cost Accountant,1
-4,Account Coordinator,1
-5,Environmental Specialist,1
-6,Design Engineer,1
-7,VP Sales,2
-8,Computer Systems Analyst II,3
-9,Software Consultant,1
-10,Marketing Manager,1
-11,Professor,2
-12,Project Manager,3
-13,Senior Financial Analyst,3
-14,Quality Engineer,2
-15,Developer I,2
-16,General Manager,3
-17,Social Worker,1
-18,Software Consultant,3
-19,Project Manager,3
-20,Office Assistant I,2
+nombre_carrera,duracion
+VP Product Management,1
+Geological Engineer,3
+Cost Accountant,1
+Account Coordinator,1
+Environmental Specialist,1
+Design Engineer,1
+VP Sales,2
+Computer Systems Analyst II,3
+Software Consultant,1
+Marketing Manager,1
+Professor,2
+Project Manager,3
+Senior Financial Analyst,3
+Quality Engineer,2
+Developer I,2
+General Manager,3
+Social Worker,1
+Software Consultant,3
+Project Manager,3
+Office Assistant I,2

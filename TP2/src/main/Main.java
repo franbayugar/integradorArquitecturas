@@ -7,19 +7,36 @@ package main;
 
 import Entity.Carrera;
 import Entity.Estudiante;
+import repository.BaseRepository;
 import repository.RepoCarrera;
 import repository.RepoEstudiante;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.persistence.Entity;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 
 
 public class Main {
 
 	public static void main(String[] args) throws ParseException {
 		
+		
+		
 		RepoEstudiante re = new RepoEstudiante();
+		RepoCarrera rc = new RepoCarrera();
+		
+		LoadTableEstudiante(re);
+		LoadTableCarrera(rc);
+		
 		
 		String date_time = "11/27/2020 05:35:00";
         SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
@@ -29,7 +46,7 @@ public class Main {
 		
 		//System.out.println(re.findById(1).toString());
 		
-		RepoCarrera rc = new RepoCarrera();
+		
 		
 		Carrera ca=new Carrera ("TUDAI", 3);
 		
@@ -45,5 +62,43 @@ public class Main {
 				
 	}	
 
+	@SuppressWarnings("deprecation")
+	private static void LoadTableEstudiante(RepoEstudiante es) {		
+	
+		CSVParser parser = null;
 
+		try {
+			parser = CSVFormat.DEFAULT.withHeader().parse(new FileReader("src/csv/estudiantes.csv"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//e.create();
+		for(CSVRecord row: parser) {
+			es.create((String.valueOf(row.get("nombres")), String.valueOf(row.get("apellido")), Date.parse(row.get("fecha_Nacimiento")), String.valueOf(row.get("genero")), Integer.valueOf(row.get("dni")), String.valueOf(row.get("ciudad_Residencia"))) ;
+
+		}
+		
+	}	
+	
+	@SuppressWarnings("deprecation")
+	private static void LoadTableCarrera(RepoCarrera c) {		
+	
+		CSVParser parser = null;
+
+		try {
+			parser = CSVFormat.DEFAULT.withHeader().parse(new FileReader("src/csv/carreras.csv"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//c.create();
+		for(CSVRecord row: parser) {
+			c.create(String.valueOf(row.get("nombre")), Integer.valueOf(row.get("duracion")));
+
+		}
+		
+	}
 }

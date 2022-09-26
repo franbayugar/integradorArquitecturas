@@ -45,8 +45,7 @@ public class BaseRepository<Entity, ID extends Serializable> implements Reposito
 	public void create(Entity entity) {
 		this.em.getTransaction().begin();
 		this.em.persist(entity);
-		this.em.getTransaction().commit();
-		
+		this.em.getTransaction().commit();		
 	}
 
 	
@@ -56,8 +55,7 @@ public class BaseRepository<Entity, ID extends Serializable> implements Reposito
 			Entity entity= this.em.find(clase, id);
 			this.em.getTransaction().begin();
 			this.em.remove(entity);
-			this.em.getTransaction().commit();
-			
+			this.em.getTransaction().commit();			
 	}
 		
 		

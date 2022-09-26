@@ -41,7 +41,8 @@ public class RepoCarrera extends BaseRepository <Carrera,Integer> {
 		  public void delete(int id) { 
 			  super.delete(id);
 		  
-		  }
+		  }		  
+		  
 		  
 		/* * @Override public Entity update(Integer id, Entity entity) { // TODO
 		 * Auto-generated method stub return null; }

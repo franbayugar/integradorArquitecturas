@@ -22,7 +22,7 @@ public class Estudiante {
 	@Column(name="Genero",nullable=false)
 	private String genero;
 	@Column(name="Dni",nullable=false)
-	private double dni;
+	private Integer dni;
 	@Column(name="Ciudad_Residencia",nullable=false)
 	private String ciudadResidencia;
 	
@@ -31,7 +31,7 @@ public class Estudiante {
 		//super();
 	} 
 	
-	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, double dni,String ciudadResidencia) {
+	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, Integer dni,String ciudadResidencia) {
 		//super();
 		this.nombres = nombres;
 		this.apellido = apellido;

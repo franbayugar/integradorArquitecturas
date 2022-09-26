@@ -35,7 +35,7 @@ public class Main {
 		RepoCarrera rc = new RepoCarrera();
 		
 		LoadTableEstudiante(re);
-		LoadTableCarrera(rc);
+	//	LoadTableCarrera(rc);
 		
 		
 		String date_time = "11/27/2020 05:35:00";
@@ -62,7 +62,7 @@ public class Main {
 				
 	}	
 
-	@SuppressWarnings("deprecation")
+	//@SuppressWarnings("deprecation")
 	private static void LoadTableEstudiante(RepoEstudiante es) {		
 	
 		CSVParser parser = null;
@@ -76,13 +76,14 @@ public class Main {
 		}
 		//e.create();
 		for(CSVRecord row: parser) {
-			es.create((String.valueOf(row.get("nombres")), String.valueOf(row.get("apellido")), Date.parse(row.get("fecha_Nacimiento")), String.valueOf(row.get("genero")), Integer.valueOf(row.get("dni")), String.valueOf(row.get("ciudad_Residencia"))) ;
+			Estudiante est=new Estudiante (String.valueOf(row.get("nombres")), String.valueOf(row.get("apellido")), new Date(row.get("fecha_Nacimiento")), String.valueOf(row.get("genero")), Long.valueOf(row.get("dni")), String.valueOf(row.get("ciudad_Residencia"))) ;
+			es.create(est) ;
 
 		}
 		
 	}	
 	
-	@SuppressWarnings("deprecation")
+/*	@SuppressWarnings("deprecation")
 	private static void LoadTableCarrera(RepoCarrera c) {		
 	
 		CSVParser parser = null;
@@ -96,9 +97,10 @@ public class Main {
 		}
 		//c.create();
 		for(CSVRecord row: parser) {
+			
 			c.create(String.valueOf(row.get("nombre")), Integer.valueOf(row.get("duracion")));
 
 		}
 		
-	}
+	}*/
 }

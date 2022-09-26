@@ -29,13 +29,15 @@ public class Cursa {
 	
 	//JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
 	public Cursa() {
-		//super();
-	} 
+		
+	}
 	
-	public Cursa(int num_libreta, int id_carrera, Date fechaInscripcion, boolean graduado) {	
+	public Cursa(Estudiante estudiante, Carrera carrera, Date fechaInscripcion, boolean graduado) {	
 		//super();
 		//this.num_libreta = num_libreta;
 		//this.id_carrera = id_carrera;
+		this.carrera = carrera;
+		this.estudiante = estudiante;
 		this.fechaInscripcion = fechaInscripcion;
 		this.graduado = graduado;
 	}

@@ -48,7 +48,7 @@ public class Main {
 		Carrera ca=new Carrera ("Enfermeria", 2);
 		rc.create(ca);
 		System.out.println(ca.getId_carrera());
-		Cursa cu = new Cursa(es1.getNum_libreta(), ca.getId_carrera(), dateParser.parse(date_time), false);
+		Cursa cu = new Cursa(es1, ca, dateParser.parse(date_time), false);
 		
 		rcu.create(cu);
 		//re.delete(26);

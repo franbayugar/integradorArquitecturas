@@ -34,7 +34,7 @@ public class Main {
 		RepoEstudiante re = new RepoEstudiante();
 		RepoCarrera rc = new RepoCarrera();
 		
-		//LoadTableEstudiante(re);
+		LoadTableEstudiante(re);
 		LoadTableCarrera(rc);
 		
 		

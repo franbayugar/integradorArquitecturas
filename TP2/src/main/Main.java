@@ -5,6 +5,7 @@
 
 package main;
 
+import Entity.Carrera;
 import Entity.Estudiante;
 import repository.RepoCarrera;
 import repository.RepoEstudiante;
@@ -26,9 +27,13 @@ public class Main {
 		Estudiante es1= new Estudiante("Pepe","Lopez",dateParser.parse(date_time),"Hombrecito",22333444,"Tres Arroyos");
 		re.create(es1);
 		
-		System.out.println(re.findById(1).toString());
+		//System.out.println(re.findById(1).toString());
 		
 		RepoCarrera rc = new RepoCarrera();
+		
+		Carrera ca=new Carrera ("TUDAI", 3);
+		
+		rc.create(ca);
 		
 		System.out.println(rc.findById(1).toString());
 		

@@ -30,11 +30,14 @@ public class RepoCarrera extends BaseRepository <Carrera,Integer> {
 			//return (Entity) res;
 		}
 
-		/*
-		 * @Override public Entity create(Entity entity) { // TODO Auto-generated method
-		 * stub return null; }
-		 * 
-		 * @Override public Entity delete(Integer id) { // TODO Auto-generated method
+		
+		 @Override 
+		 public void create(Carrera entity) {
+			 // TODO Auto-generated method stub 
+			 super.create(entity);
+			 }
+		  
+		 /* @Override public Entity delete(Integer id) { // TODO Auto-generated method
 		 * stub return null; }
 		 * 
 		 * @Override public Entity update(Integer id, Entity entity) { // TODO

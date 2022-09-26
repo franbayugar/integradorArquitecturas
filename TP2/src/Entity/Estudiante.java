@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Estudiante {
 
 	@Id	
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int num_libreta;
 	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_carrera) ??
 	

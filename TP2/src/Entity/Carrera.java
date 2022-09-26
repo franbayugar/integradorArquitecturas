@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Carrera {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_carrera;	
 	//@ManyToOne (mappedby ??) / @JoinColumn(name=fk_estudiante) ??	
 	@Column(name="Nombre_Carrera",nullable=false)

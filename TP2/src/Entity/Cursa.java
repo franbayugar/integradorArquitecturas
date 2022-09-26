@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Cursa {
 
 	@Id	
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_cursa;
 	/**
 	 *@Column(name="num_libreta",nullable=false)

@@ -8,11 +8,7 @@ package main;
 import Entity.Carrera;
 import Entity.Cursa;
 import Entity.Estudiante;
-import repository.BaseRepository;
-import repository.RepoCarrera;
-import repository.RepoCursa;
-import repository.RepoEstudiante;
-
+import repository.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;

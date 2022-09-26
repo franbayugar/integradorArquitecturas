@@ -27,10 +27,7 @@ public class Cursa {
 	@ManyToOne
 	private Carrera carrera;
 	
-	//JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
-	public Cursa() {
-		
-	}
+
 	
 	public Cursa(Estudiante estudiante, Carrera carrera, Date fechaInscripcion, boolean graduado) {	
 		//super();

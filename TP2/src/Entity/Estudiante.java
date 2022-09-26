@@ -26,10 +26,7 @@ public class Estudiante {
 	@Column(name="Ciudad_Residencia",nullable=false)
 	private String ciudadResidencia;
 	
-	//JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
-	public Estudiante() {
-		//super();
-	} 
+
 	
 	public Estudiante(String nombres, String apellido, Date fechaNacimiento, String genero, Integer dni,String ciudadResidencia) {
 		//super();

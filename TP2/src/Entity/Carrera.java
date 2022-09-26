@@ -15,10 +15,6 @@ public class Carrera {
 	@Column(name="Duracion",nullable=false)
 	private int duracion;
 	
-	//JPA necesita un constructor vacío para convertir la fila DB en un objeto Java.
-	public Carrera() {
-		//super();
-	} 
 	
 	public Carrera(String nombre, int duracion) {	
 		//super();

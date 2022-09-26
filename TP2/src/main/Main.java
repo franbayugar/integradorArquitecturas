@@ -5,6 +5,7 @@
 
 package main;
 
+import repository.RepoCarrera;
 import repository.RepoEstudiante;
 
 public class Main {
@@ -14,6 +15,10 @@ public class Main {
 		RepoEstudiante re = new RepoEstudiante();
 		
 		System.out.println(re.findById(1).toString());
+		
+		RepoCarrera rc = new RepoCarrera();
+		
+		System.out.println(rc.findById(1).toString());
 				
 	}	
 

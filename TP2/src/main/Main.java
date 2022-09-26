@@ -27,7 +27,7 @@ public class Main {
 		Estudiante es1= new Estudiante("Pepe","Lopez",dateParser.parse(date_time),"Hombrecito",22333444,"Tres Arroyos");
 	//	re.create(es1);
 		
-		System.out.println(re.findById(1).toString());
+		//System.out.println(re.findById(1).toString());
 		
 		RepoCarrera rc = new RepoCarrera();
 		
@@ -35,7 +35,9 @@ public class Main {
 		
 		rc.create(ca);
 		
-		re.delete(1);
+	//	re.delete(1);
+		
+		rc.delete(15);
 		
 		System.out.println(rc.findById(13).toString());
 		

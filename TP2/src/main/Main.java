@@ -12,6 +12,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		RepoEstudiante re = new RepoEstudiante();
+		
+		System.out.println(re.findById(1).toString());
 				
 	}	
 

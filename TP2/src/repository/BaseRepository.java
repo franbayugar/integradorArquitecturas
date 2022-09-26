@@ -1,16 +1,26 @@
 package repository;
 
+
+import java.io.Serializable;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class BaseRepository{
+public class BaseRepository<Entity, ID extends Serializable> implements Repository<Entity, ID>{
 
-	private EntityManager em;
+	protected EntityManager em;
+	
+	protected Class<Entity> clase;
+	
+	protected Class<ID> idClass;
+	
+	
 		
-	protected BaseRepository() {
-		
-		this.em = this.getConection("batamanMySql");		
+	public BaseRepository(Class<Entity> entityClass,Class<ID> idClass) {
+		this.em = this.getConection("batamanMySql");
+		this.clase=entityClass;
+		this.idClass= idClass;
 	}
 	
 	private EntityManager getConection(String tecnologia) {
@@ -18,8 +28,16 @@ public class BaseRepository{
 		if(this.em != null) {
 			return this.em;
 		
-		}EntityManagerFactory emf = Persistence.createEntityManagerFactory(tecnologia);
-			return emf.createEntityManager();
+		}
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(tecnologia);
+		return emf.createEntityManager();
 	
+	}
+
+	@Override
+	public Entity findById(int id) {
+		Entity entity = this.em.find(clase, id);
+		return entity;
+		
 	}	
 }

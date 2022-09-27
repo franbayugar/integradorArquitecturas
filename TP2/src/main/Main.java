@@ -58,7 +58,7 @@ public class Main {
 		//System.out.println(re.getEstudiantesByGenero("F"));
 
 		//F. RECUPERAR CARRERAS CON ESTUDIANTES INSCRIPTOS Y ORDENAR POR CANTIDAD DE INSCRIPTOS
-		//System.out.println(rc.getCarrerasConEstudiantesInscriptos());
+		System.out.println(rc.getCarrerasConEstudiantesInscriptos());
 
 		/*
 		 * 

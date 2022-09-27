@@ -6,8 +6,8 @@ public class DTOCarrera implements Serializable {
 
 	private int id_cursa;
 	private String nombre_carrera;
-	private int cantidad;
-	public DTOCarrera(int id, String nombre_carrera, int cantidad) {
+	private long cantidad;
+	public DTOCarrera(int id, String nombre_carrera, long cantidad) {
 		this.id_cursa = id;
 		this.nombre_carrera = nombre_carrera;
 		this.cantidad = cantidad;
@@ -17,7 +17,7 @@ public class DTOCarrera implements Serializable {
 		return id_cursa;
 	}
 
-	public int getCantidad() {
+	public long getCantidad() {
 		return cantidad;
 	}
 
@@ -25,6 +25,11 @@ public class DTOCarrera implements Serializable {
 		return nombre_carrera;
 	}
 
+	@Override
+	public String toString() {
+		return "DTOCarrera [nombre_carrera=" + nombre_carrera + ", cantidad=" + cantidad + "]";
+	}
 
+	
 	
 }

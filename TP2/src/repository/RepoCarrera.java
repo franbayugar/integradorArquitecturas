@@ -43,7 +43,7 @@ public class RepoCarrera extends BaseRepository<Carrera, Integer> {
 	}
 
 	public List<DTOCarrera> getCarrerasConEstudiantesInscriptos() {
-		String query = "SELECT new DTOCarrera(c.id_carrera, c.nombre, COUNT(cu.carrera)) FROM Carrera c JOIN Cursa cu ON cu.carrera = c.id_carrera GROUP BY cu.carrera, c.nombre ORDER  BY cantidad DESC";
+		String query = "SELECT new DTO.DTOCarrera(c.id_carrera, c.nombre, COUNT(cu.carrera)) FROM Carrera c JOIN Cursa cu ON cu.carrera = c.id_carrera GROUP BY cu.carrera, c.nombre";
 		List<DTOCarrera> dtoCursa = super.em.createQuery(query, DTOCarrera.class).getResultList();
 		return dtoCursa;
 	}

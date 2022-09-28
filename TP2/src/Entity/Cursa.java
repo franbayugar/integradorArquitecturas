@@ -19,8 +19,8 @@ public class Cursa {
 	 */
 	@Column(name="fechaInscripcion",nullable=false)
 	private Date fechaInscripcion;
-	@Column(name="graduado",nullable=false)
-	private boolean graduado;
+	@Column(name="fechaGraduacion",nullable=true)
+	private Date fechaGraduacion;
 	
 	@ManyToOne
 	private Estudiante estudiante;
@@ -32,14 +32,14 @@ public class Cursa {
 		
 	}
 	
-	public Cursa(Estudiante estudiante, Carrera carrera, Date fechaInscripcion, boolean graduado) {	
+	public Cursa(Estudiante estudiante, Carrera carrera, Date fechaInscripcion, Date fechaGraduacion) {	
 		//super();
 		//this.num_libreta = num_libreta;
 		//this.id_carrera = id_carrera;
 		this.carrera = carrera;
 		this.estudiante = estudiante;
 		this.fechaInscripcion = fechaInscripcion;
-		this.graduado = graduado;
+		this.fechaGraduacion = fechaGraduacion;
 	}
 
 	public Date getFechaInscripcion() {
@@ -50,16 +50,22 @@ public class Cursa {
 		this.fechaInscripcion = fechaInscripcion;
 	}
 
-	public boolean isGraduado() {
-		return graduado;
+	public Date getFechaGraduacion() {
+		return this.fechaGraduacion;
 	}
 
-	public void setGraduado(boolean graduado) {
-		this.graduado = graduado;
+	public void setGraduado(Date fechaGraduacion) {
+		this.fechaGraduacion = fechaGraduacion;
 	}
 
 	public int getId_cursa() {
 		return id_cursa;
 	}	
 	
+	public boolean isGraduado() {
+		if(this.fechaGraduacion!=null) {
+			return true;
+		}
+		return false;
+	}
 }

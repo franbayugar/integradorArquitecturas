@@ -3,6 +3,7 @@ package repository;
 import java.util.List;
 
 import DTO.DTOCarrera;
+import DTO.DTOReporteCarrerasInscriptosEgresados;
 import Entity.Carrera;
 
 public class RepoCarrera extends BaseRepository<Carrera, Integer> {
@@ -45,6 +46,14 @@ public class RepoCarrera extends BaseRepository<Carrera, Integer> {
 	public List<DTOCarrera> getCarrerasConEstudiantesInscriptos() {
 		String query = "SELECT new DTO.DTOCarrera(c.id_carrera, c.nombre, COUNT(cu.carrera)) FROM Carrera c JOIN Cursa cu ON cu.carrera = c.id_carrera GROUP BY cu.carrera, c.nombre";
 		List<DTOCarrera> dtoCursa = super.em.createQuery(query, DTOCarrera.class).getResultList();
+		return dtoCursa;
+	}
+	
+
+	
+	public List<DTOReporteCarrerasInscriptosEgresados> getReporte() {
+		String query = "SELECT  new DTO.DTOReporteCarrerasInscriptosEgresados( ca.nombre, e.apellido, e.nombres,CASE WHEN cu.fechaGraduacion is null  THEN 'Inscripto' WHEN cu.fechaGraduacion is NOT null THEN 'Graduado'  END AS Estado,  year(fechaInscripcion) as anio) FROM Estudiante e JOIN Cursa cu ON e.num_libreta = cu.estudiante.num_libreta JOIN Carrera ca ON cu.carrera.id_carrera= ca.id_carrera ORDER BY ca.nombre,anio";
+		List<DTOReporteCarrerasInscriptosEgresados> dtoCursa = super.em.createQuery(query, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
 		return dtoCursa;
 	}
 

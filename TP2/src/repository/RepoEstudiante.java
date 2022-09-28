@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import DTO.DTOEstudiantesPorCiudad;
+
 public class RepoEstudiante extends BaseRepository<Estudiante, Integer> {
 
 	public RepoEstudiante() {
@@ -55,6 +57,14 @@ public class RepoEstudiante extends BaseRepository<Estudiante, Integer> {
 	public List<Estudiante> getEstudiantesByGenero(String genero){
 		TypedQuery<Estudiante> typedQuery = super.em.createQuery("SELECT u FROM Estudiante u WHERE u.genero =:genero",Estudiante.class);
 		typedQuery.setParameter("genero", genero);
+		return typedQuery.getResultList();
+	}
+	
+	public List<DTOEstudiantesPorCiudad> getEstudiantesPorCiudadDeResidencia(String carrera_filtro, String ciudad_filtro) {
+		String query = "SELECT new DTO.DTOEstudiantesPorCiudad(e.num_libreta, e.apellido, e.nombres,e.ciudadResidencia) FROM Estudiante e JOIN Cursa cu ON e.num_libreta = cu.estudiante.num_libreta JOIN Carrera ca ON cu.carrera.id_carrera= ca.id_carrera WHERE e.ciudadResidencia = :ciudadResidencia AND ca.nombre = :carreraDeterminada";
+		TypedQuery<DTOEstudiantesPorCiudad> typedQuery = super.em.createQuery(query, DTOEstudiantesPorCiudad.class);
+		typedQuery.setParameter("ciudadResidencia",ciudad_filtro);
+		typedQuery.setParameter("carreraDeterminada",carrera_filtro);
 		return typedQuery.getResultList();
 	}
 

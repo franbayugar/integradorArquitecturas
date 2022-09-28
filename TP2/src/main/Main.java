@@ -32,21 +32,21 @@ public class Main {
 		RepoCarrera rc = new RepoCarrera();
 		RepoCursa rcu = new RepoCursa();
 		
-	//	LoadTableEstudiante(re);
-	//	LoadTableCarrera(rc);
+		LoadTableEstudiante(re);
+		LoadTableCarrera(rc);
 		
 		String date_time = "11/27/2020";
         SimpleDateFormat dateParser = new SimpleDateFormat("MM/dd/yyyy");
 		Estudiante es1= new Estudiante("Luis","Mas",dateParser.parse(date_time),"Hombrecito",22333444,"Tres Arroyos");
 		//A. DAR DE ALTA UN ESTUDIANTE
-	//	re.create(es1);
+		re.create(es1);
 
-	//	Carrera ca=new Carrera ("Enfermeria", 2);
-//		rc.create(ca);
+		Carrera ca=new Carrera ("Enfermeria", 2);
+		rc.create(ca);
 		
 		//B. MATRICULAR UN ESTUDIANTE EN UNA CARRERA
-	//	Cursa cu = new Cursa(es1, ca, dateParser.parse(date_time), false);
-	//	rcu.create(cu);
+		Cursa cu = new Cursa(es1, ca, dateParser.parse(date_time), null);
+		rcu.create(cu);
 		
 		//C. OBTENER TODOS LOS ESTUDIANTES ORDENADOS ALFABETICAMENTE POR APELLIDO (DESC)
 		//System.out.println(re.getEstudiantes());
@@ -58,8 +58,16 @@ public class Main {
 		//System.out.println(re.getEstudiantesByGenero("F"));
 
 		//F. RECUPERAR CARRERAS CON ESTUDIANTES INSCRIPTOS Y ORDENAR POR CANTIDAD DE INSCRIPTOS
-		System.out.println(rc.getCarrerasConEstudiantesInscriptos());
+		//System.out.println(rc.getCarrerasConEstudiantesInscriptos());
+		
+		//G. recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia
+		System.out.println(re.getEstudiantesPorCiudadDeResidencia("Enfermeria","Tres Arroyos"));
 
+		// 3. Generar un reporte de las carreras, que para cada carrera incluya información de los 
+		//    inscriptos y egresados por año. Se deben ordenar las carreras alfabéticamente, y presentar
+		//    los años de manera cronológica.
+
+		System.out.println(rc.getReporte());
 		/*
 		 * 
 		 * 

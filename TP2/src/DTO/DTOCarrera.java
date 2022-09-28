@@ -27,7 +27,7 @@ public class DTOCarrera implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DTOCarrera [nombre_carrera=" + nombre_carrera + ", cantidad=" + cantidad + "]";
+		return "DTOCarrera [nombre_carrera=" + nombre_carrera + ", cantidad=" + cantidad + "]\n";
 	}
 
 	

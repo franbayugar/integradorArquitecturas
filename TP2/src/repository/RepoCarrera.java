@@ -2,6 +2,9 @@ package repository;
 
 import java.util.List;
 
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
 import DTO.DTOCarrera;
 import DTO.DTOReporteCarrerasInscriptosEgresados;
 import Entity.Carrera;
@@ -52,8 +55,19 @@ public class RepoCarrera extends BaseRepository<Carrera, Integer> {
 
 	
 	public List<DTOReporteCarrerasInscriptosEgresados> getReporte() {
-		String query = "SELECT  new DTO.DTOReporteCarrerasInscriptosEgresados( ca.nombre, e.apellido, e.nombres,CASE WHEN cu.fechaGraduacion is null  THEN 'Inscripto' WHEN cu.fechaGraduacion is NOT null THEN 'Graduado'  END AS Estado,  year(fechaInscripcion) as anio) FROM Estudiante e JOIN Cursa cu ON e.num_libreta = cu.estudiante.num_libreta JOIN Carrera ca ON cu.carrera.id_carrera= ca.id_carrera ORDER BY ca.nombre,anio";
-		List<DTOReporteCarrerasInscriptosEgresados> dtoCursa = super.em.createQuery(query, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
+		//String query = "Select new DTO.DTOReporteCarrerasInscriptosEgresados( ca.nombre,ca.duracion,'Incriptos' AS Tipo_Alumnos, count(estudiante_num_libreta) as Cantidad, EXTRACT (YEAR,cu.fechaInscripcion) as anio) from Carrera ca left join Cursa cu on ca.id_carrera = cu.carrera.id_carrera WHERE cu.fechaInscripcion IS NOT NULL GROUP BY ca.id_carrera, anio OR Select new DTO.DTOReporteCarrerasInscriptosEgresados(ca.nombre,ca.Duracion, 'Graduados' AS Tipo_Alumnos, count(estudiante_num_libreta), EXTRACT (YEAR,cu.fechaInscripcion) as anio) from Carrera ca left join Cursa cu on ca.id_carrera = cu.carrera.id_carrera WHERE cu.fechaGraduacion IS NOT NULL GROUP BY ca.id_carrera, anio ORDER BY Nombre_Carrera,anio ";
+		//String query = "Select new DTO.DTOReporteCarrerasInscriptosEgresados( ca.nombre, ca.duracion,'Incriptos' AS Tipo_Alumnos, count(estudiante_num_libreta) as Cantidad, EXTRACT (YEAR,cu.fechaInscripcion) as anio) from Carrera ca left join Cursa cu on ca.id_carrera = cu.carrera.id_carrera WHERE cu.fechaInscripcion IS NOT NULL GROUP BY ca.id_carrera, anio ";
+		String queryInscriptos = "SELECT  new DTO.DTOReporteCarrerasInscriptosEgresados(cursaDos.carrera.id_carrera, C.nombre, YEAR(cursaDos.fechaInscripcion) as anio , (SELECT COUNT(*) FROM Cursa cur2 WHERE cur2.carrera.id_carrera=cursaDos.carrera.id_carrera AND YEAR(cur2.fechaInscripcion)=YEAR(cursaDos.fechaInscripcion) group by cur2.carrera.id_carrera, YEAR(cur2.fechaInscripcion)) as cantIns) FROM Cursa cursaDos JOIN Carrera C on C.id_carrera = cursaDos.carrera.id_carrera GROUP BY anio, cursaDos.carrera.id_carrera,  cantIns, C.nombre ORDER BY anio ASC, C.nombre ASC";
+
+		List<DTOReporteCarrerasInscriptosEgresados> dtoCursa = super.em.createQuery(queryInscriptos, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
+		String queryGraduados = "SELECT  new DTO.DTOReporteCarrerasInscriptosEgresados(cursaDos.carrera.id_carrera, C.nombre, YEAR(cursaDos.fechaGraduacion) as anio , (SELECT COUNT(*) FROM Cursa cur2 WHERE cur2.carrera.id_carrera=cursaDos.carrera.id_carrera AND YEAR(cur2.fechaGraduacion)=YEAR(cursaDos.fechaGraduacion) group by cur2.carrera.id_carrera, YEAR(cur2.fechaGraduacion)) as cantGrad) FROM Cursa cursaDos JOIN Carrera C on C.id_carrera = cursaDos.carrera.id_carrera GROUP BY anio, cursaDos.carrera.id_carrera,  cantIns, C.nombre ORDER BY anio ASC, C.nombre ASC";
+
+		List<DTOReporteCarrerasInscriptosEgresados> dtoCursaGraduados = super.em.createQuery(queryInscriptos, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
+
+		
+		//System.out.println(dtoCursa.toString());
+		
+		
 		return dtoCursa;
 	}
 

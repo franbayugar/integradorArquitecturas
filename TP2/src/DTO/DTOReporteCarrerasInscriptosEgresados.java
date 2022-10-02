@@ -1,46 +1,67 @@
 package DTO;
 
+
 public class DTOReporteCarrerasInscriptosEgresados {
 
-	private String carrera;
-	private String apellido;
-	private String nombres;
-	private String estado;
+	private int id_carrera;
+	private String nombre_carrera;
 	private int anio;
-
-	public DTOReporteCarrerasInscriptosEgresados(String carrera, String apellido, String nombres, String estado, int anio) {
-		this.carrera = carrera;
-		this.apellido = apellido;
-		this.nombres = nombres;
-		this.estado =estado;
-		this.anio = anio;
-	}
-
-	public String getCarrera() {
-		return carrera;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public String getNombres() {
-		return nombres;
-	}
+	private Long cantInscriptos=(long) 0;
 	
-	public String getEstado() {
-		return estado;
+	
+	public DTOReporteCarrerasInscriptosEgresados(int id_carrera, String nombre_carrera, int anio, Long cantInsc) {
+		
+		this.id_carrera = id_carrera;
+		this.nombre_carrera = nombre_carrera;
+		this.anio = anio;
+		this.cantInscriptos = cantInsc;
+		
+	}
+
+	public int getId_carrera() {
+		return id_carrera;
+	}
+
+	public void setId_carrera(int id_carrera) {
+		this.id_carrera = id_carrera;
+	}
+
+	public String getNombre_carrera() {
+		return nombre_carrera;
+	}
+
+	public void setNombre_carrera(String nombre_carrera) {
+		this.nombre_carrera = nombre_carrera;
 	}
 
 	public int getAnio() {
 		return anio;
 	}
 
-	@Override
-	public String toString() {
-		return "DTOReporteCarrerasInscriptosEgresados [carrera=" + carrera + ", apellido=" + apellido + ", nombres="
-				+ nombres + ", estado=" + estado + ", anio=" + anio + "]\n";
+	public void setAnio(int anio) {
+		this.anio = anio;
 	}
 
+	
+
+	public Long getCantInscriptos() {
+		return cantInscriptos;
+	}
+
+	public void setCantInscriptos(Long cantInscriptos) {
+		this.cantInscriptos = cantInscriptos;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "Reporte Inscriptos/Egresados Carreras: [id_carrera=" + id_carrera + ", nombre_carrera=" + nombre_carrera
+				+ ", anio=" + anio + ", cantInscriptos=" + cantInscriptos + ", cantGraduados=" + "]\n";
+	}
+
+	
+	
+	
 	
 }

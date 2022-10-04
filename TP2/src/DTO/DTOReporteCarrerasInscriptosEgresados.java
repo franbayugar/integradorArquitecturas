@@ -65,6 +65,12 @@ public class DTOReporteCarrerasInscriptosEgresados {
 				+ ", anio=" + anio + ", cantInscriptos=" + cantInscriptos + ", cantGraduados=" + cantGraduados + "]\n";
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		DTOReporteCarrerasInscriptosEgresados dto = (DTOReporteCarrerasInscriptosEgresados) obj;
+		return (this.getAnio() == dto.getAnio() && this.getId_carrera() == dto.getId_carrera()); 
+	}
 	
 	
 	

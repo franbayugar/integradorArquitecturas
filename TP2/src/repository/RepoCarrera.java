@@ -56,23 +56,31 @@ public class RepoCarrera extends BaseRepository<Carrera, Integer> {
 
 	
 	public List<DTOReporteCarrerasInscriptosEgresados> getReporte() {
-		String queryInscriptos = "SELECT new DTO.DTOReporteCarrerasInscriptosEgresados(ca.id_carrera, ca.nombre, (Year(cu.fechaInscripcion)) as anio ,count(estudiante_num_libreta) as inscriptios, COUNT(0)) FROM Cursa cu JOIN Carrera ca on cu.carrera.id_carrera = ca.id_carrera group by cu.carrera.id_carrera, anio";
-
-		List<DTOReporteCarrerasInscriptosEgresados> dtoCursa = super.em.createQuery(queryInscriptos, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
-		String queryGraduados = "SELECT  new DTO.DTOReporteCarrerasInscriptosEgresados(select ca.id_carrera, ca.nombre, (Year(cu.fechaGraduacion)) as anio,COUNT(0),(select count(estudiante_num_libreta) from Cursa cg where Year(cg.fechaGraduacion) = anio and cg.carrera.id_carrera = cu.carrera.id_carrera) as graduados FROM Cursa cu JOIN Carrera ca on cu.carrera.id_carrera = ca.id_carrera WHERE cu.fechaGraduacion IS NOT NULL group by cu.carrera.id_carrera, anio";
-		List<DTOReporteCarrerasInscriptosEgresados> dtoCursaGraduados = super.em.createQuery(queryInscriptos, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
+		/// obtiene los inscriptos
+		String queryInscriptos = "SELECT new DTO.DTOReporteCarrerasInscriptosEgresados(ca.id_carrera, ca.nombre, (Year(cu.fechaInscripcion)) as anio ,count(estudiante_num_libreta) as inscriptos, SUM(0)) FROM Cursa cu JOIN Carrera ca on cu.carrera.id_carrera = ca.id_carrera group by cu.carrera.id_carrera, anio";
+		List<DTOReporteCarrerasInscriptosEgresados> dtoInscriptos = super.em.createQuery(queryInscriptos, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
+		
+		/// obtiene los graduados
+		String queryGraduados =  "SELECT new DTO.DTOReporteCarrerasInscriptosEgresados(ca.id_carrera, ca.nombre, (Year(cu.fechaGraduacion)) as anio , SUM(0) ,count(estudiante_num_libreta) as graduados) FROM Cursa cu JOIN Carrera ca on cu.carrera.id_carrera = ca.id_carrera group by cu.carrera.id_carrera, anio";
+		List<DTOReporteCarrerasInscriptosEgresados> dtoGraduados = super.em.createQuery(queryGraduados, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
 
 	
-		for(DTOReporteCarrerasInscriptosEgresados lista : dtoCursa){
-		  
-		  for(DTOReporteCarrerasInscriptosEgresados lista2 : dtoCursaGraduados){
+		for(DTOReporteCarrerasInscriptosEgresados lista : dtoInscriptos){
+		  for(DTOReporteCarrerasInscriptosEgresados lista2 : dtoGraduados){
 			  if((lista.getId_carrera()==lista2.getId_carrera())&&(lista.getAnio()==lista2.getAnio())) {
 				  lista.setCantGraduados(lista2.getCantGraduados());
 			  }
-			}
-		}		
+		  }
+		}
 		
-		return dtoCursa;
+		
+		for(DTOReporteCarrerasInscriptosEgresados lista2 : dtoGraduados){
+		  if(!dtoInscriptos.contains(lista2)) {
+			  dtoInscriptos.add(lista2);
+		  }
+		}
+		
+		return dtoInscriptos;
 	}
 
 	/*

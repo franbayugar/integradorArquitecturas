@@ -11,9 +11,11 @@
 
 ## Docker 
 **Students** comes with a Dockerfile that allows running in containers in combination with an external MySQL database. Note: It is highly recommended to use an external database for production use, as the standalone image does not take care of data persistence.
+
 `docker-compose up`
 
 ## Group 3
+- Ballone, Gabriel
 - Bayugar, Franco
 - Crespi, Federico
 - Molfese, Juan

@@ -61,7 +61,7 @@ public class RepoCarrera extends BaseRepository<Carrera, Integer> {
 		List<DTOReporteCarrerasInscriptosEgresados> dtoInscriptos = super.em.createQuery(queryInscriptos, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
 		
 		/// obtiene los graduados
-		String queryGraduados =  "SELECT new DTO.DTOReporteCarrerasInscriptosEgresados(ca.id_carrera, ca.nombre, (Year(cu.fechaGraduacion)) as anio , SUM(0) ,count(estudiante_num_libreta) as graduados) FROM Cursa cu JOIN Carrera ca on cu.carrera.id_carrera = ca.id_carrera group by cu.carrera.id_carrera, anio";
+		String queryGraduados = "SELECT new DTO.DTOReporteCarrerasInscriptosEgresados(ca.id_carrera, ca.nombre, (Year(cu.fechaGraduacion)) as anio, SUM(0), count(estudiante_num_libreta) as graduados) FROM Cursa cu JOIN Carrera ca on cu.carrera.id_carrera = ca.id_carrera WHERE fechaGraduacion IS NOT NULL group by cu.carrera.id_carrera, anio ";
 		List<DTOReporteCarrerasInscriptosEgresados> dtoGraduados = super.em.createQuery(queryGraduados, DTOReporteCarrerasInscriptosEgresados.class).getResultList();
 
 	

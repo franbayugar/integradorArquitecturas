@@ -1,12 +1,12 @@
-package util;
+package com.example.demo.util;
 
-import model.Person;
+import com.example.demo.model.Person;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import lombok.extern.slf4j.Slf4j;
-import repository.PersonRepository;
+import com.example.demo.repository.PersonRepository;
 
 @Configuration
 @Slf4j

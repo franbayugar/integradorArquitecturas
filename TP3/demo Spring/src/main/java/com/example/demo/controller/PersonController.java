@@ -1,4 +1,4 @@
-package controller;
+package com.example.demo.controller;
 
 import java.util.Optional;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
-import model.Person;
-import repository.PersonRepository;
+import com.example.demo.model.Person;
+import com.example.demo.repository.PersonRepository;
 
 @RestController
 public class PersonController {

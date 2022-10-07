@@ -33,8 +33,8 @@ public class Main {
 		RepoCarrera rc = new RepoCarrera();
 		RepoCursa rcu = new RepoCursa();
 		
-		LoadTableEstudiante(re);
-		LoadTableCarrera(rc);
+		//LoadTableEstudiante(re);
+		//LoadTableCarrera(rc);
 		RunMenu(re, rc, rcu);	
 	
 	}

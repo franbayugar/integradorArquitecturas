@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Person {
+public class Student {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +19,11 @@ public class Person {
 	@Column
 	private String surname;
 	
-	public Person() {
+	public Student() {
 		
 	}
 
-	public Person(long dni, String name, String surname) {
+	public Student(long dni, String name, String surname) {
 		super();
 		this.dni = dni;
 		this.name = name;

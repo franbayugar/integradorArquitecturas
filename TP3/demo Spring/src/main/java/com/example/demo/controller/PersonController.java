@@ -21,22 +21,22 @@ public class PersonController {
 		this.repository = repository;
 	}
 	
-	@GetMapping("/persons1")
+	@GetMapping("/persons")
 	public Iterable<Person> getPersons() {return repository.findAll();}
 	
-	@GetMapping("/persons1BySurname/{surname}")
+	@GetMapping("/personsBySurname/{surname}")
 	public Iterable<Person> getPersonsBySurname(@PathVariable String surname) {return repository.findAllBySurname(surname);}
 	
-	@GetMapping("/persons1ByName/{name}")
+	@GetMapping("/personsByName/{name}")
 	public Iterable<Person> getPersonsByName(@PathVariable String name) {return repository.findAllByName(name);}
 	
-	@PostMapping("/persons1")
+	@PostMapping("/persons")
 	public Person newPerson (@RequestBody Person p) {return repository.save(p);}
 	
-	@GetMapping("/persons1/{id}")
+	@GetMapping("/persons/{id}")
 	Optional <Person> one (@PathVariable Long id) {return repository.findById(id); }
 	
-	@PutMapping("/persons1/{id}")
+	@PutMapping("/persons/{id}")
 	Person replacePerson (@RequestBody Person newPerson, @PathVariable Long id) {return repository.saveAndFlush(newPerson);}
 	
 	

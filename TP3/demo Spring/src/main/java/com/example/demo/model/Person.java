@@ -6,10 +6,13 @@ import lombok.Data;
 
 @Entity
 @Data
-
 public class Person {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@Column
 	private long dni;
 	@Column
 	private String name;
@@ -26,8 +29,8 @@ public class Person {
 		this.name = name;
 		this.surname = surname;
 	}
-	
-	
-	
-	
+
+
+
+
 }

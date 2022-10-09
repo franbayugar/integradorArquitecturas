@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public  abstract class StudentRepository implements JpaRepository<Student, Integer> {
+public  interface StudentRepository extends JpaRepository<Student, Integer> {
 	@Query("SELECT t FROM Student t WHERE  t.surname= :surname")
 	public abstract  List <Student> findAllBySurname(@Param("surname") String surname);
 

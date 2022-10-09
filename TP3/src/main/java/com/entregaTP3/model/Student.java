@@ -23,17 +23,15 @@ public class Student {
 		
 	}
 
-	public int getId() {
-		return id;
-	}
-
 	public Student(long dni, String name, String surname) {
 		super();
 		this.dni = dni;
 		this.name = name;
 		this.surname = surname;
 	}
-
+	public int getId() {
+		return id;
+	}
 	public long getDni() {
 		return dni;
 	}

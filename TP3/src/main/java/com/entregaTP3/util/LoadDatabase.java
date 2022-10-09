@@ -26,6 +26,13 @@ class LoadDatabase {
 		};
 	}
 
+	@Bean
+	CommandLineRunner initDataBase(@Qualifier("careerRepository") CareerRepository repository) {
+		return args -> {
+			log.info("Preloading"+ repository.save(new Career("tudai",3)));
+		};
+	}
+
 
 
 	

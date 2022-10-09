@@ -46,7 +46,6 @@ public class StudentController {
 	@PutMapping("/students/{id}")
 	Student replaceStudent (@RequestBody Student studentUpdated, @PathVariable Integer id) {return service.updateStudent(studentUpdated,id);}
 
-
 	@GetMapping("/students/genero/{gender}")
 	List<Student> byGender (@PathVariable char gender) {return service.studentByGender(gender); }
 

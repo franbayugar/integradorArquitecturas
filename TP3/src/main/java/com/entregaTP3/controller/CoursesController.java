@@ -19,8 +19,8 @@ public class CoursesController {
         this.service = service;
     }
 
-    //@PostMapping("/register")
-    //public Courses newRegister(@RequestBody Courses c){return service.save(c);}
+    @PostMapping("/register")
+    public Courses newRegister(@RequestBody Courses c){return service.newRegister(c);}
 
 
 }

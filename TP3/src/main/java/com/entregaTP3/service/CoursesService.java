@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CoursesService {
 
-    //@Autowired
-    //private CoursesRepository repository;
 
+    @Autowired
+    private CoursesRepository repository;
 
-    //public Courses newRegister(Courses c){return repository.register(c);};
+    public Courses newRegister(Courses c){return repository.save(c);};
 }

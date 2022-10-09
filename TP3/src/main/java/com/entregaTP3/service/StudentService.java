@@ -36,4 +36,10 @@ public class StudentService {
     // no es necesario el put
         return null;
     }
+
+    public List<Student> studentByGender(char gender) {
+        return repository.getStudentsByGender(gender);
+    }
+
+
 }

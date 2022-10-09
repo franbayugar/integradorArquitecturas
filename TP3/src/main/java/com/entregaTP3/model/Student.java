@@ -4,55 +4,45 @@ import javax.persistence.*;
 
 import lombok.Data;
 
+import java.util.Date;
+
+
 @Entity
 @Data
 public class Student {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int collegeNotebook;
 
 	@Column
 	private long dni;
+
+	@Column
+	private Date bornDate;
+
+	@Column
+	private char gender;
 	@Column
 	private String name;
 	@Column
 	private String surname;
-	
+
+	@Column
+	private String city;
+
+
 	public Student() {
 		
 	}
 
-	public Student(long dni, String name, String surname) {
-		super();
+	public Student(long dni, String bornDate, char gender, String name, String surname, String city) {
 		this.dni = dni;
+		this.bornDate = new Date(bornDate);
+		this.gender = gender;
 		this.name = name;
 		this.surname = surname;
-	}
-	public int getId() {
-		return id;
-	}
-	public long getDni() {
-		return dni;
+		this.city = city;
 	}
 
-	public void setDni(long dni) {
-		this.dni = dni;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
 }

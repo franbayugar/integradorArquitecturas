@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Date;
+
 @Configuration
 @Slf4j
 class LoadDatabase {
@@ -19,8 +21,8 @@ class LoadDatabase {
 	@Bean
 	CommandLineRunner initDataBase(@Qualifier("studentRepository") StudentRepository repository) {
 		return args -> {
-			log.info("Preloading"+ repository.save(new Student(1234, "Seba","Perez")));
-			log.info("Preloading"+ repository.save(new Student(4567, "Juan","Sosa")));
+			log.info("Preloading"+ repository.save(new Student(1234, "01/01/1985", 'M', "Seba","Perez","Tres Arroyos")));
+			log.info("Preloading"+ repository.save(new Student(5678, "21/11/2000", 'F', "Maria","Gomez","Bahia Blanca")));
 		};
 	}
 

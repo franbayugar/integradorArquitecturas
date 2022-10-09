@@ -17,7 +17,8 @@ public  interface StudentRepository extends JpaRepository<Student, Integer> {
 	@Query("SELECT t FROM Student t WHERE t.name= :name")
 	public abstract  List <Student> findAllByName(@Param("name") String name);
 
-	//@Query("SELECT t FROM Student t ORDER BY t.name")
-	//public abstract  List <Student> findAllOrderByName();
-	//List<Student> findAll(Sort.Direction asc, String name);
+	@Query("SELECT t FROM Student t WHERE t.gender= :gender")
+	public abstract  List <Student> getStudentsByGender(@Param("gender") char gender);
+
+
 }

@@ -1,5 +1,6 @@
 package com.entregaTP3.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.entregaTP3.service.StudentService;
@@ -46,7 +47,8 @@ public class StudentController {
 	Student replaceStudent (@RequestBody Student studentUpdated, @PathVariable Integer id) {return service.updateStudent(studentUpdated,id);}
 
 
-
+	@GetMapping("/students/genero/{gender}")
+	List<Student> byGender (@PathVariable char gender) {return service.studentByGender(gender); }
 
 
 	

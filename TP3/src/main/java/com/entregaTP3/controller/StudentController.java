@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.entregaTP3.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import com.entregaTP3.model.Student;
@@ -38,12 +39,15 @@ public class StudentController {
 	@PostMapping("/students")
 	public Student newStudent (@RequestBody Student p) {return service.newStudent(p);}
 	
-	//@GetMapping("/student/{id}")
-	//Optional <Student> one (@PathVariable Integer id) {return service.findById(id); }
+	@GetMapping("/students/{id}")
+	Optional <Student> one (@PathVariable Integer id) {return service.studentById(id); }
 	
-	//@PutMapping("/student/{id}")
-	//Student replaceStudent (@PathVariable Integer id) {return service.saveAndFlush();}
-	
+	@PutMapping("/students/{id}")
+	Student replaceStudent (@RequestBody Student studentUpdated, @PathVariable Integer id) {return service.updateStudent(studentUpdated,id);}
+
+
+
+
 
 	
 	

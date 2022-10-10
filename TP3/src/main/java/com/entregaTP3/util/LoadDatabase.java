@@ -1,11 +1,12 @@
 package com.entregaTP3.util;
 
+
 import com.entregaTP3.model.Courses;
+import com.entregaTP3.repository.CoursesRepository;
 import com.entregaTP3.repository.StudentRepository;
 import com.entregaTP3.model.Career;
 import com.entregaTP3.model.Student;
 import com.entregaTP3.repository.CareerRepository;
-import com.entregaTP3.repository.CoursesRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -27,13 +28,18 @@ class LoadDatabase {
 	}
 
 	@Bean
-	CommandLineRunner initDataBase(@Qualifier("careerRepository") CareerRepository repository) {
+	CommandLineRunner initDataBase2(@Qualifier("careerRepository") CareerRepository repository) {
 		return args -> {
 			log.info("Preloading"+ repository.save(new Career("tudai",3)));
 		};
 	}
 
-
+	@Bean
+	CommandLineRunner initDataBase3(@Qualifier("coursesRepository") CoursesRepository repository) {
+		return args -> {
+			log.info("Preloading"+ repository.save(new Courses(1,1,"01/03/2020",null)));
+		};
+	}
 
 	
 }

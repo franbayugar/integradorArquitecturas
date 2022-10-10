@@ -33,6 +33,8 @@ public class Courses {
         this.collegeNotebook = collegeNotebook;
         this.id_career = id_career;
         this.inscriptionDate = new Date(inscriptionDate);
-        this.graduationDate = new Date(graduationDate);
+        if(graduationDate!=null) {
+            this.graduationDate = new Date(graduationDate);
+        }
     }
 }

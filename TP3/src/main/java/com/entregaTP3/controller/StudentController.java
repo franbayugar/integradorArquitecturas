@@ -3,6 +3,7 @@ package com.entregaTP3.controller;
 import java.util.List;
 import java.util.Optional;
 
+import com.entregaTP3.DTO.DTOStudentsWithCity;
 import com.entregaTP3.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -51,8 +52,8 @@ public class StudentController {
 	@GetMapping("/students/genero/{gender}")
 	List<Student> byGender (@PathVariable char gender) {return service.studentByGender(gender); }
 
-
-	
+	@GetMapping("/students/careerCity/{withCareer}/{city}")
+	List<DTOStudentsWithCity> studentByCareerCity (@PathVariable String withCareer, @PathVariable String city) {return service.studentByCareerCity(withCareer,city); }
 	
 
 }

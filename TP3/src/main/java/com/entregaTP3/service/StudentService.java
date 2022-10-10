@@ -1,6 +1,7 @@
 package com.entregaTP3.service;
 
 
+import com.entregaTP3.DTO.DTOStudentsWithCity;
 import com.entregaTP3.model.Student;
 import com.entregaTP3.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +54,5 @@ public class StudentService {
     }
 
 
+    public List<DTOStudentsWithCity> studentByCareerCity(String withCareer, String city) {return repository.studentByCareerCity(withCareer, city); }
 }

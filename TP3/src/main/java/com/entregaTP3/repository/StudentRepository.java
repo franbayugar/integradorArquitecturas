@@ -1,6 +1,6 @@
 package com.entregaTP3.repository;
 
-import org.springframework.data.domain.Sort;
+import com.entregaTP3.DTO.DTOStudentsWithCity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -20,5 +20,6 @@ public  interface StudentRepository extends JpaRepository<Student, Integer> {
 	@Query("SELECT t FROM Student t WHERE t.gender= :gender")
 	public abstract  List <Student> getStudentsByGender(@Param("gender") char gender);
 
-
+    @Query("SELECT"+" new com.entregaTP3.DTO.DTOStudentsWithCity(e.collegeNotebook, e.surname, e.name,e.city) "+" FROM Student e JOIN Courses cu ON e.collegeNotebook = cu.collegeNotebook JOIN Career ca ON cu.collegeNotebook= ca.id_career WHERE e.city = :city AND ca.name = :withCareer")
+    List<DTOStudentsWithCity> studentByCareerCity(String withCareer, String city);
 }

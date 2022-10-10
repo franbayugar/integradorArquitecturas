@@ -1,6 +1,7 @@
 package com.entregaTP3.controller;
 
 import com.entregaTP3.DTO.DTOCareer;
+import com.entregaTP3.DTO.DTOListEnrolledGraduated;
 import com.entregaTP3.service.CareerService;
 import com.entregaTP3.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,7 @@ public class CareerController {
     @GetMapping("/careers")
     List<DTOCareer> careerWithEntries() {return service.careerWithEntries(); }
 
+    @GetMapping("/careerReport")
+    List<DTOListEnrolledGraduated> careerReport() {return service.careerReport(); }
 
 }

@@ -29,6 +29,20 @@ class LoadDatabase {
 
 		};
 	}
-	
-	
+
+	@Bean
+	CommandLineRunner initDataBase2(@Qualifier("careerRepository") CareerRepository repository) {
+		return args -> {
+			log.info("Preloading"+ repository.save(new Career("tudai",3)));
+		};
+	}
+
+	@Bean
+	CommandLineRunner initDataBase3(@Qualifier("coursesRepository") CoursesRepository repository) {
+		return args -> {
+			log.info("Preloading"+ repository.save(new Courses(1,1,"01/03/2020",null)));
+		};
+	}
+
+
 }

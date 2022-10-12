@@ -20,26 +20,15 @@ import java.util.Date;
 class LoadDatabase {
 
 	@Bean
-	CommandLineRunner initDataBase(@Qualifier("studentRepository") StudentRepository repository) {
+	CommandLineRunner initDataBase(@Qualifier("studentRepository") StudentRepository studentRepository, @Qualifier("careerRepository") CareerRepository careerRepository, @Qualifier("coursesRepository") CoursesRepository courseRepository) {
 		return args -> {
-			log.info("Preloading"+ repository.save(new Student(1234, "01/01/1985", 'M', "Seba","Perez","Azul")));
-			log.info("Preloading"+ repository.save(new Student(5678, "21/11/2000", 'F', "Maria","Gomez","Bahia Blanca")));
+			log.info("Preloading"+ studentRepository.save(new Student(1234, "01/01/1985", 'M', "Seba","Perez","Azul")));
+			log.info("Preloading"+ studentRepository.save(new Student(5678, "21/11/2000", 'F', "Maria","Gomez","Bahia Blanca")));
+			log.info("Preloading"+ careerRepository.save(new Career("tudai",3)));
+			log.info("Preloading"+ courseRepository.save(new Courses(1,1,"01/03/2020",null)));
+
 		};
 	}
-
-	@Bean
-	CommandLineRunner initDataBase2(@Qualifier("careerRepository") CareerRepository repository) {
-		return args -> {
-			log.info("Preloading"+ repository.save(new Career("tudai",3)));
-		};
-	}
-
-	@Bean
-	CommandLineRunner initDataBase3(@Qualifier("coursesRepository") CoursesRepository repository) {
-		return args -> {
-			log.info("Preloading"+ repository.save(new Courses(1,1,"01/03/2020",null)));
-		};
-	}
-
+	
 	
 }

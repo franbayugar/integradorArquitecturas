@@ -40,18 +40,21 @@ public class StudentController {
 	 * @param p data of new Student
 	 * @return Return a boolean answer
 	 */
+	//Registra un estudiante
 	@PostMapping("/students")
 	public Student newStudent (@RequestBody Student p) {return service.newStudent(p);}
-	
+	//Obtiene estudiantes por numero de libreta
 	@GetMapping("/students/{id}")
 	Optional <Student> one (@PathVariable Integer id) {return service.studentById(id); }
 	
 	@PutMapping("/students/{id}")
 	Student replaceStudent (@RequestBody Student studentUpdated, @PathVariable Integer id) {return service.updateStudent(studentUpdated,id);}
 
+	//Obtiene estudiantes por genero
 	@GetMapping("/students/genero/{gender}")
 	List<Student> byGender (@PathVariable char gender) {return service.studentByGender(gender); }
 
+	//Obtiene los estudiantes de una determinada carrera filtrados por ciudad de residencia
 	@GetMapping("/students/careerCity/{withCareer}/{city}")
 	List<DTOStudentsWithCity> studentByCareerCity (@PathVariable String withCareer, @PathVariable String city) {return service.studentByCareerCity(withCareer,city); }
 	

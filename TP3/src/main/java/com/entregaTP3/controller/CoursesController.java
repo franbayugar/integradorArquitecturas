@@ -19,6 +19,7 @@ public class CoursesController {
         this.service = service;
     }
 
+    //Registra un estudiante en una carrera determinada
     @PostMapping("/register")
     public Courses newRegister(@RequestBody Courses c){return service.newRegister(c);}
 

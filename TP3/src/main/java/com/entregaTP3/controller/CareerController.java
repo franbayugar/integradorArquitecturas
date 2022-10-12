@@ -22,9 +22,13 @@ public class CareerController {
         super();
         this.service = service;
     }
+    //Obtiene el listado de carreras con estudiantes inscriptos ordenados por cantidad de estudiantes
     @GetMapping("/careers")
     List<DTOCareer> careerWithEntries() {return service.careerWithEntries(); }
 
+    //genera un reporte de las carreras, que para cada carrera incluya información de los
+    //inscriptos y egresados por año. Se deben ordenar las carreras alfabéticamente, y
+    //presentar los años de manera cronológica
     @GetMapping("/careerReport")
     List<DTOListEnrolledGraduated> careerReport() {return service.careerReport(); }
 

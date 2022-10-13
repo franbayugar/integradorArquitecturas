@@ -23,5 +23,7 @@ public class CoursesController {
     @PostMapping("/register")
     public Courses newRegister(@RequestBody Courses c){return service.newRegister(c);}
 
+    @GetMapping("/courses")
+    public Iterable<Courses> getCurses() {return service.getCurses();}
 
 }

@@ -1,17 +1,17 @@
 package com.entregaTP3.controller;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import com.entregaTP3.DTO.DTOStudentsWithCity;
 import com.entregaTP3.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
-import lombok.extern.slf4j.Slf4j;
 
 import com.entregaTP3.model.Student;
+
 
 
 @RestController
@@ -27,7 +27,12 @@ public class StudentController {
 	}
 	
 	@GetMapping("/students")
-	public Iterable<Student> getStudent() {return service.getStudents();}
+	public Iterable<Student> getStudent(@RequestParam(required = false) String order) {
+		if (order != null) {
+			return service.getStudents(order);
+		}
+		return service.getStudents();
+	}
 	
 	//@GetMapping("/studentBySurname/{surname}")
 	//public Iterable<Student> getStudentBySurname(@PathVariable String surname) {return service.findAllBySurname(surname);}

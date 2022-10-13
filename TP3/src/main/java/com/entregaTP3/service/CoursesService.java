@@ -5,6 +5,8 @@ import com.entregaTP3.repository.CoursesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CoursesService {
 
@@ -13,4 +15,6 @@ public class CoursesService {
     private CoursesRepository repository;
 
     public Courses newRegister(Courses c){return repository.save(c);};
+
+    public List<Courses> getCurses(){return repository.findAll();}
 }

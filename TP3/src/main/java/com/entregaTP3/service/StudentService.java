@@ -25,7 +25,12 @@ public class StudentService {
         this.repository = repository;
     }
 
-    public List<Student> getStudents(){return repository.findAll(Sort.by(Sort.Direction.ASC, "name"));}
+    public List<Student> getStudents(){
+        return repository.findAll();
+    }
+    public List<Student> getStudents(String order){
+        return repository.findAll(Sort.by(Sort.Direction.ASC, order));
+    }
 
     public Student newStudent (Student p){
 

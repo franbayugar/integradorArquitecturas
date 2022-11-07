@@ -62,6 +62,8 @@ Extras:
 
 11. (GET) http://localhost:8080/courses
 
+**or import file in postman or thunder client (vscode)** [endpoints.json](https://github.com/franbayugar/integradorArquitecturas/blob/main/TP3/extra/endpoints.json)
+
 ## Deploy
 To consult the database visit: http://localhost:8080/h2-console/
 

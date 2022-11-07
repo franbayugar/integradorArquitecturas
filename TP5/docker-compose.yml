@@ -1,0 +1,112 @@
+version: '3.4'
+
+services:
+  arq_web:
+    image: bataman/arq_web
+    environment:
+      - Estudiante=http://estudiante
+      - Cursa=http://cursa
+      - Carrera=http://carrera
+    ports:
+      - "2000:80"
+    depends_on:
+      - estudiante
+      - cursa
+      - carrera
+
+  estudiante:
+    image: bataman/estudiante
+    environment:
+      - ConnectionString=Server=db_estudiante; #Initial Catalog=CatalogData;User Id=sa;Password=[PLACEHOLDER]
+#    expose:
+#      - "80"
+    ports:
+      - "3000:80"
+    #extra hosts can be used for standalone SQL Server or services at the dev PC
+#    extra_hosts:
+#      - "CESARDLSURFBOOK:10.0.75.1"
+    depends_on:
+      - db_estudiante  
+
+  cursa:
+    image: bataman/cursa
+    environment:
+      - ConnectionString=Server=db_cursa; #Initial Catalog=CatalogData;User Id=sa;Password=[PLACEHOLDER]
+#    expose:
+#      - "80"
+    ports:
+      - "3001:80"
+    #extra hosts can be used for standalone SQL Server or services at the dev PC
+#    extra_hosts:
+#      - "CESARDLSURFBOOK:10.0.75.1"
+    depends_on:
+      - db_cursa
+
+  carrera:
+    image: bataman/carrera
+    environment:
+      - ConnectionString=Server=db_carrera; # Database=Services.OrderingDb;User Id=sa;Password=[PLACEHOLDER]
+    ports:
+      - "3002:80"
+    #extra hosts can be used for standalone SQL Server or services at the dev PC
+#    extra_hosts:
+#      - "CESARDLSURFBOOK:10.0.75.1"
+    depends_on:
+      - db_carrera
+
+  db_estudiante:
+    image: mysql:8.0.30    
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: estudiante      
+
+  db_cursa:
+    image: mysql:8.0.30    
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3307:3307
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cursa      
+
+  db_carrera:
+    image: mysql:8.0.30    
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3308:3308
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: carrera
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
+#  basket-api:
+#    image: eshop/basket-api
+#    environment:
+#      - ConnectionString=sqldata
+#    ports:
+#      - "5103:80"
+#    depends_on:
+#      - sqldata
+
+# sqldata:
+#    environment:
+#      - SA_PASSWORD=[PLACEHOLDER]
+#      - ACCEPT_EULA=Y
+#    ports:
+#      - "5434:1433"
+#
+#  basketdata:
+#    image: redis

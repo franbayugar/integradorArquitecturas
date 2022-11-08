@@ -1,9 +1,9 @@
-package com.estudiante.estudiante.util;
+package com.estudiante.util;
 
 
 
-import com.estudiante.estudiante.Repository.StudentRepository;
-import com.estudiante.estudiante.Entity.Student;
+import com.estudiante.Repository.StudentRepository;
+import com.estudiante.Entity.Student;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

@@ -1,13 +1,12 @@
-package com.estudiante.estudiante.Controller;
+package com.estudiante.Controller;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 
-import com.estudiante.estudiante.DTO.DTOStudentsWithCity;
-import com.estudiante.estudiante.Entity.Student;
-import com.estudiante.estudiante.Service.StudentService;
+import com.estudiante.DTO.DTOStudentsWithCity;
+import com.estudiante.Entity.Student;
+import com.estudiante.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;

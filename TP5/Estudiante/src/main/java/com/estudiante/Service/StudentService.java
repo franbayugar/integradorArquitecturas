@@ -1,14 +1,13 @@
-package com.estudiante.estudiante.Service;
+package com.estudiante.Service;
 
-import com.estudiante.estudiante.DTO.DTOStudentsWithCity;
-import com.estudiante.estudiante.Entity.Student;
-import com.estudiante.estudiante.Repository.StudentRepository;
+import com.estudiante.DTO.DTOStudentsWithCity;
+import com.estudiante.Entity.Student;
+import com.estudiante.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

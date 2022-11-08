@@ -1,4 +1,4 @@
-package com.estudiante.estudiante.DTO;
+package com.estudiante.DTO;
 
 import java.io.Serializable;
 

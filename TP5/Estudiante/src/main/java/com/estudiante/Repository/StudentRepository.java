@@ -1,7 +1,7 @@
-package com.estudiante.estudiante.Repository;
+package com.estudiante.Repository;
 
-import com.estudiante.estudiante.DTO.DTOStudentsWithCity;
-import com.estudiante.estudiante.Entity.Student;
+import com.estudiante.DTO.DTOStudentsWithCity;
+import com.estudiante.Entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

@@ -1,6 +1,7 @@
 package com.venta.util;
 
 
+import com.venta.model.Sale;
 import com.venta.repository.SaleRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -15,8 +16,8 @@ class LoadDatabase {
     @Bean
     CommandLineRunner initDataBase(@Qualifier("saleRepository") SaleRepository productRepository) {
         return args -> {
-         //   log.info("Preloading"+ productRepository.save(new Sale()));
-         //   log.info("Preloading"+ productRepository.save(new Sale()));
+            log.info("Preloading"+ productRepository.save(new Sale(1, 2, "2022/11/11", 10, 5)));
+
 
 
         };

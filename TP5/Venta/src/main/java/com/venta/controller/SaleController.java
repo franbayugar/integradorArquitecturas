@@ -4,10 +4,7 @@ import com.venta.model.Sale;
 import com.venta.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,4 +30,8 @@ public class SaleController {
         return service.newSale(s);
     }
     //devolveria un listado de  ventas
+
+    @PutMapping("/sales/{id}")
+    Sale modifyProduct (@RequestBody Sale saleUpdated, @PathVariable Integer id) {return service.updateSale(saleUpdated,id);}
+
 }

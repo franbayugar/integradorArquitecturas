@@ -22,4 +22,10 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    public Product updateProduct(Product productUpdated, Integer id) {
+        Product product = productRepository.getReferenceById(id);
+        product.setName(productUpdated.getName());
+        product.setPrice(productUpdated.getPrice());
+        return productRepository.save(product);
+    }
 }

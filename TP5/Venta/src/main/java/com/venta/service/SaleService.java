@@ -21,4 +21,13 @@ public class SaleService {
         return saleRepository.findAll();
     }
 
+    public Sale updateSale(Sale saleUpdated, Integer id) {
+        Sale sale = saleRepository.getReferenceById(id);
+        sale.setId_client(saleUpdated.getId_client());
+        sale.setId_product(saleUpdated.getId_product());
+        sale.setCantidad(saleUpdated.getCantidad());
+        sale.setFecha(saleUpdated.getFecha());
+        sale.setPrice(saleUpdated.getPrice());
+        return saleRepository.save(sale);
+    }
 }

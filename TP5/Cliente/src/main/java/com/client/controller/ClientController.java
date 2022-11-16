@@ -38,12 +38,16 @@ public class ClientController {
         return service.updateClient(clientUpdated, id);
     }
 
-    //REVISAR --> deberia de devolver alguna respuesta
+    //REVISAR --> deberia de devolver alguna respuesta andan las dos pero sin respuesta
+   // @DeleteMapping("/clients/{id}")
+   // public void deleteClient(@PathVariable("id") Integer id) {
+   //     service.deleteClient(id);
+   // }
     @DeleteMapping("/clients/{id}")
-    public void deleteClient(@PathVariable("id") Integer id) {
+    public ResponseEntity<?> deleteBook(@PathVariable(value="id")int id) {
         service.deleteClient(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-
 
 }
 

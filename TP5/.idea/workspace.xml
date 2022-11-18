@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego JWT a Cliente">
-      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/security/JWTAuthorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,34 +45,23 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2HYbddpSArBaP8ogVPvUi4lOQ9n" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-11",
-    "last_opened_file_path": "/media/fede/Mis archivos/Estudios/TUDAI/3ro/2do Cuatrimestre/Arquitectura web/integradorArquitecturas/TP5",
-    "spring.configuration.checksum": "8b033d910159cca91383274065a457e1"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.venta.security" />
@@ -96,7 +78,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.VentaApplication">
+  <component name="RunManager" selected="Spring Boot.ProductoApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Venta" />
       <method v="2">
@@ -166,6 +148,7 @@
       <workItem from="1668564071147" duration="7000000" />
       <workItem from="1668721979814" duration="713000" />
       <workItem from="1668722774241" duration="4527000" />
+      <workItem from="1668741541174" duration="3529000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrego JWT a Cliente">
       <created>1668726680314</created>
@@ -190,6 +173,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se agrego JWT a Cliente" />

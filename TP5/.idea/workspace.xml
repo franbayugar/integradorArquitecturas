@@ -4,26 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160810.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_7_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/security/JWTAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego JWT a Cliente">
+      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/security/JWTAuthorizationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cliente/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../integradorArquitecturas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../integradorArquitecturas.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Producto/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +80,15 @@
     "spring.configuration.checksum": "8b033d910159cca91383274065a457e1"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.venta.security" />
+      <recent name="com.venta.entity" />
+      <recent name="com.venta.controller" />
+      <recent name="com.producto.security" />
+      <recent name="com.producto.controller" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -95,7 +96,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ClientApplication (1)">
+  <component name="RunManager" selected="Spring Boot.VentaApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Venta" />
       <method v="2">
@@ -164,8 +165,16 @@
       <workItem from="1668551409904" duration="10000" />
       <workItem from="1668564071147" duration="7000000" />
       <workItem from="1668721979814" duration="713000" />
-      <workItem from="1668722774241" duration="3601000" />
+      <workItem from="1668722774241" duration="4527000" />
     </task>
+    <task id="LOCAL-00001" summary="Se agrego JWT a Cliente">
+      <created>1668726680314</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668726680314</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,5 +190,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se agrego JWT a Cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrego JWT a Cliente" />
   </component>
 </project>

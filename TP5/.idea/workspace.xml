@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego JWT a Cliente">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +145,7 @@
       <workItem from="1668564071147" duration="7000000" />
       <workItem from="1668721979814" duration="713000" />
       <workItem from="1668722774241" duration="4527000" />
-      <workItem from="1668741541174" duration="3529000" />
+      <workItem from="1668741541174" duration="4117000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrego JWT a Cliente">
       <created>1668726680314</created>

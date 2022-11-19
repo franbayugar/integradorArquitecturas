@@ -4,6 +4,7 @@ package com.producto.controller;
 import com.producto.entity.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.json.JSONObject;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,13 +17,19 @@ import java.util.stream.Collectors;
 
 @RestController
 public class UserController {
+    final static String userNameLog = "fran";
+    final static String userPassLog = "1234";
     @PostMapping("user")
     public User login(@RequestBody User u) {
-        String token = getJWTToken(u.getUser());
-        //User user = new User(username, password);
-        u.setUser("username");
-        u.setToken(token);
-        return u;
+        // los keys del JSON q mandemos tienen q ser igual q los atributos de User
+        String nameUser = u.getUser();
+        String pwdUser = u.getPwd();
+        if(nameUser.equals(userNameLog) && pwdUser.equals(userPassLog)){
+            String token = getJWTToken(u.getUser());
+            u.setToken(token);
+            return u;
+        }
+        return null;
 
     }
 

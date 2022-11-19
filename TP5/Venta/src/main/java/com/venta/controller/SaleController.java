@@ -1,5 +1,7 @@
 package com.venta.controller;
 
+import com.venta.DTO.DTOReportShoppingClient;
+import com.venta.DTO.DTOSalesForDay;
 import com.venta.model.Sale;
 import com.venta.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,11 @@ public class SaleController {
     //devolveria un listado de  ventas
 
     @PutMapping("/sales/{id}")
-    Sale modifyProduct (@RequestBody Sale saleUpdated, @PathVariable Integer id) {return service.updateSale(saleUpdated,id);}
+    Sale modifySale (@RequestBody Sale saleUpdated, @PathVariable Integer id) {return service.updateSale(saleUpdated,id);}
 
+    @GetMapping("/sales/reportShoppingClients")
+    public List<DTOReportShoppingClient> gerReportShoppingClients(){ return service.getReportShoppingSales(); }
+
+    @GetMapping("/sales/reportSalesForDay")
+    public List<DTOSalesForDay> gerReportSalesForDay(){ return service.getReportSalesForDay(); }
 }

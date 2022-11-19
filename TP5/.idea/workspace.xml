@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego JWT a Cliente">
-      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/security/JWTAuthorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_7_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/DTO/DTOReportShoppingClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/DTO/DTOSalesForDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/repository/SaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/repository/SaleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/service/SaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/service/SaleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/util/LoadDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/util/LoadDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +78,14 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-11",
-    "last_opened_file_path": "/media/fede/Mis archivos/Estudios/TUDAI/3ro/2do Cuatrimestre/Arquitectura web/integradorArquitecturas/TP5",
-    "spring.configuration.checksum": "8b033d910159cca91383274065a457e1"
+    "last_opened_file_path": "C:/Users/guidi/eclipse-workspace/integradorArquitecturas/TP5/Producto/src/main/java/com/producto/repository",
+    "spring.configuration.checksum": "6d5feac168c50d8cdaeb4bf17ff93d49"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\guidi\eclipse-workspace\integradorArquitecturas\TP5\Producto\src\main\java\com\producto\repository" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.venta.security" />
       <recent name="com.venta.entity" />
@@ -166,6 +171,9 @@
       <workItem from="1668564071147" duration="7000000" />
       <workItem from="1668721979814" duration="713000" />
       <workItem from="1668722774241" duration="4527000" />
+      <workItem from="1668736329001" duration="5638000" />
+      <workItem from="1668811453681" duration="299000" />
+      <workItem from="1668811782745" duration="7807000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrego JWT a Cliente">
       <created>1668726680314</created>

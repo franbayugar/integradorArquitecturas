@@ -1,5 +1,7 @@
 package com.venta.service;
 
+import com.venta.DTO.DTOReportShoppingClient;
+import com.venta.DTO.DTOSalesForDay;
 import com.venta.model.Sale;
 import com.venta.repository.SaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +32,10 @@ public class SaleService {
         sale.setPrice(saleUpdated.getPrice());
         return saleRepository.save(sale);
     }
+
+    public List<DTOReportShoppingClient> getReportShoppingSales() {
+        return saleRepository.getReportShoppingClients();
+    }
+
+    public List<DTOSalesForDay> getReportSalesForDay() {return saleRepository.getReportSalesForDay(); }
 }

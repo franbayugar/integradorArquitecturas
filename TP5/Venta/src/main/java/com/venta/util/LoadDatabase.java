@@ -14,9 +14,12 @@ import lombok.extern.slf4j.Slf4j;
 class LoadDatabase {
 
     @Bean
-    CommandLineRunner initDataBase(@Qualifier("saleRepository") SaleRepository productRepository) {
+    CommandLineRunner initDataBase(@Qualifier("saleRepository") SaleRepository saleRepository) {
         return args -> {
-            log.info("Preloading"+ productRepository.save(new Sale(1, 2, "2022/11/11", 10, 5)));
+            log.info("Preloading"+ saleRepository.save(new Sale(1, 2, "2022/11/10", 10.0, 5)));
+            log.info("Preloading"+ saleRepository.save(new Sale(1, 2, "2022/11/11", 10.0, 4)));
+            log.info("Preloading"+ saleRepository.save(new Sale(1, 2, "2022/11/12", 10.0, 3)));
+            log.info("Preloading"+ saleRepository.save(new Sale(1, 2, "2022/11/12", 10.0, 1)));
 
 
 

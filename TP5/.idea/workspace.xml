@@ -4,13 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego REST-Template consulta de ventas por cliente">
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/DTO/DTOProductMoreSale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/DTO/DTOProductReport.java" afterDir="false" />
+    <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego JWT a Cliente">
+      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/DTO/DTOClientsReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_classes_macos_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_native_macos_osx_x86_64_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_84_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_core_1_0_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_http_1_0_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_7_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_7_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_3_23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/service/ClientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/repository/SaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/repository/SaleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/service/SaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/service/SaleService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,14 +198,7 @@
       <option name="project" value="LOCAL" />
       <updated>1668726680314</updated>
     </task>
-    <task id="LOCAL-00002" summary="Se agrego REST-Template consulta de ventas por cliente">
-      <created>1668988864905</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1668988864905</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +217,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se agrego JWT a Cliente" />
-    <MESSAGE value="Se agrego REST-Template consulta de ventas por cliente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrego REST-Template consulta de ventas por cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrego JWT a Cliente" />
   </component>
 </project>

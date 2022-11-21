@@ -59,5 +59,5 @@ public class SaleController {
     public List<DTOSalesForDay> getReportSalesForDay(){ return service.getReportSalesForDay(); }
 
     @GetMapping("/sales/productMoreSell")
-    public List<DTOProductMoreSale> getProductMoreSell(){ return service.getProductMoreSell(); }
+    public DTOProductMoreSale getProductMoreSell(){ return service.getProductMoreSell(); }
 }

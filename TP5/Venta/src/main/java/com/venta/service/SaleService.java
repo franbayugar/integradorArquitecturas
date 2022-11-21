@@ -43,7 +43,7 @@ public class SaleService {
 
     public List<DTOSalesForDay> getReportSalesForDay() {return saleRepository.getReportSalesForDay(); }
 
-    public List<DTOProductMoreSale> getProductMoreSell() {
-        return saleRepository.getProductMoreSell();
+    public DTOProductMoreSale getProductMoreSell() {
+        return saleRepository.getProductMoreSell().get(0);
     }
 }

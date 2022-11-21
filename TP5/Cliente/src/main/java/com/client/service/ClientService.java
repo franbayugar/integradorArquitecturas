@@ -3,11 +3,10 @@ package com.client.service;
 import com.client.model.Client;
 import com.client.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -22,6 +21,8 @@ public class ClientService {
     public List<Client> getClient(){
         return clientRepository.findAll();
     }
+
+    public Optional<Client> getClient(Integer id) { return clientRepository.findById(id); }
 
     public Client updateClient(Client clientUpdated, Integer id) {
         Client client = clientRepository.getReferenceById(id);

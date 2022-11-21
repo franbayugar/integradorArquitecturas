@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ClientController {
@@ -36,6 +37,11 @@ public class ClientController {
     @PutMapping("/clients/{id}")
     Client modifyClient(@RequestBody Client clientUpdated, @PathVariable Integer id) {
         return service.updateClient(clientUpdated, id);
+    }
+
+    @GetMapping("/clients/{id}")
+    Optional<Client> getClient(@PathVariable Integer id) {
+        return service.getClient(id);
     }
 
     //REVISAR --> deberia de devolver alguna respuesta andan las dos pero sin respuesta

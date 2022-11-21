@@ -17,15 +17,21 @@ import java.util.stream.Collectors;
 
 @RestController
 public class UserController {
+    final static String userNameLog = "manganeta";
+    final static String userPassLog = "1234";
     @PostMapping("user")
     public User login(@RequestBody User u) {
-        String token = getJWTToken(u.getUser());
-        //User user = new User(username, password);
-        u.setUser("username");
-        u.setToken(token);
-        return u;
-    }
+        // los keys del JSON q mandemos tienen q ser igual q los atributos de User
+        String nameUser = u.getUser();
+        String pwdUser = u.getPwd();
+        if(nameUser.equals(userNameLog) && pwdUser.equals(userPassLog)){
+            String token = getJWTToken(u.getUser());
+            u.setToken(token);
+            return u;
+        }
+        return null;
 
+    }
     private String getJWTToken(String username) {
         String secretKey = "mySecretKey";
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils

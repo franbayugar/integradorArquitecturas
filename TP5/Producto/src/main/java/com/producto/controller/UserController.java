@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 @RestController
 public class UserController {
-    final static String userNameLog = "fran";
+    final static String userNameLog = "manganeta";
     final static String userPassLog = "1234";
     @PostMapping("user")
     public User login(@RequestBody User u) {

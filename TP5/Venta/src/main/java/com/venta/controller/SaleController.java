@@ -59,5 +59,13 @@ public class SaleController {
     public List<DTOSalesForDay> getReportSalesForDay(){ return service.getReportSalesForDay(); }
 
     @GetMapping("/sales/productMoreSell")
-    public DTOProductMoreSale getProductMoreSell(){ return service.getProductMoreSell(); }
+    public DTOProductReport getProductMoreSell() throws JsonProcessingException {
+        DTOProductMoreSale p = service.getProductMoreSell();
+        RestTemplate restTemplate = new RestTemplate();
+        String resourceUrl = "http://localhost:3000/products/"+p.getId_product();
+        ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode root = mapper.readTree(response.getBody());
+        return new DTOProductReport(p.getId_product(),root.path("name").asText(),p.getAmount());
+    }
 }

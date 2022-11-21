@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ProductController {
@@ -34,4 +35,6 @@ public class ProductController {
     @PutMapping("/products/{id}")
     Product modifyProduct (@RequestBody Product productUpdated, @PathVariable Integer id) {return service.updateProduct(productUpdated,id);}
 
+    @GetMapping("/products/{id}")
+    Optional<Product> getById (@PathVariable Integer id){return service.getById(id);}
 }

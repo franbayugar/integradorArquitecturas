@@ -3,9 +3,9 @@ package com.venta.DTO;
 public class DTOProductReport {
     private int id_product;
     private String name_product;
-    private int amount;
+    private long amount;
 
-    public DTOProductReport(int id_product, String name_product, int amount) {
+    public DTOProductReport(int id_product, String name_product, long amount) {
         this.id_product = id_product;
         this.name_product = name_product;
         this.amount = amount;
@@ -27,11 +27,11 @@ public class DTOProductReport {
         this.name_product = name_product;
     }
 
-    public int getAmount() {
+    public long getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(long amount) {
         this.amount = amount;
     }
 }

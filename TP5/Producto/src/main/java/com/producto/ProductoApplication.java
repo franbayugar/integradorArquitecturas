@@ -28,6 +28,7 @@ public class ProductoApplication {
                     .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                     .authorizeRequests()
                     .antMatchers(HttpMethod.POST, "/user").permitAll()
+                    .antMatchers(HttpMethod.GET, "/products/{id}").permitAll()
                     .anyRequest().authenticated();
         }
 

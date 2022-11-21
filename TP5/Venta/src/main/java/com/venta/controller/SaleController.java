@@ -3,9 +3,7 @@ package com.venta.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.venta.DTO.DTOClientsReport;
-import com.venta.DTO.DTOReportShoppingClient;
-import com.venta.DTO.DTOSalesForDay;
+import com.venta.DTO.*;
 import com.venta.model.Sale;
 import com.venta.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,5 +56,8 @@ public class SaleController {
     }
 
     @GetMapping("/sales/reportSalesForDay")
-    public List<DTOSalesForDay> gerReportSalesForDay(){ return service.getReportSalesForDay(); }
+    public List<DTOSalesForDay> getReportSalesForDay(){ return service.getReportSalesForDay(); }
+
+    @GetMapping("/sales/productMoreSell")
+    public List<DTOProductMoreSale> getProductMoreSell(){ return service.getProductMoreSell(); }
 }

@@ -1,12 +1,16 @@
 package com.venta.service;
 
+import com.venta.DTO.DTOProductMoreSale;
+import com.venta.DTO.DTOProductReport;
 import com.venta.DTO.DTOReportShoppingClient;
 import com.venta.DTO.DTOSalesForDay;
 import com.venta.model.Sale;
 import com.venta.repository.SaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @Service
@@ -38,4 +42,8 @@ public class SaleService {
     }
 
     public List<DTOSalesForDay> getReportSalesForDay() {return saleRepository.getReportSalesForDay(); }
+
+    public List<DTOProductMoreSale> getProductMoreSell() {
+        return saleRepository.getProductMoreSell();
+    }
 }

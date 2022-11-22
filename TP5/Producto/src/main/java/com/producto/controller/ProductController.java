@@ -2,6 +2,7 @@ package com.producto.controller;
 
 import com.producto.model.Product;
 import com.producto.service.ProductService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@Api(tags = "Products", description = "Servicio de productos")
 public class ProductController {
     @Qualifier("productService")
     @Autowired

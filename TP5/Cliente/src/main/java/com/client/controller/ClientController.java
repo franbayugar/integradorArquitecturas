@@ -14,8 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@Api(tags = "customers", description = "Servicio de clientes")
-@RequestMapping("customers")
+@Api(tags = "Clients", description = "Servicio de clientes")
 public class ClientController {
     @Qualifier("clientService")
     @Autowired

@@ -27,9 +27,9 @@ public class ProductoApplication {
             http.csrf().disable()
                     .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.POST, "/user").permitAll()
                     .antMatchers(HttpMethod.GET, "/products/{id}").permitAll()
-                    .anyRequest().authenticated();
+                    .antMatchers(HttpMethod.GET, "/products/**").authenticated()
+                    .anyRequest().permitAll();
         }
 
     }

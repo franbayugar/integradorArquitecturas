@@ -2,6 +2,8 @@ package com.client.controller;
 
 import com.client.model.Client;
 import com.client.service.ClientService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@Api(tags = "customers", description = "Servicio de clientes")
+@RequestMapping("customers")
 public class ClientController {
     @Qualifier("clientService")
     @Autowired
@@ -40,7 +44,7 @@ public class ClientController {
     }
 
     @GetMapping("/clients/{id}")
-    Optional<Client> getClient(@PathVariable Integer id) {
+    Client getClient(@PathVariable Integer id) {
         return service.getClient(id);
     }
 

@@ -3,6 +3,7 @@ package com.client.controller;
 import com.client.entity.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.Api;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@Api(tags = "User", description = "Servicio de usuario")
 public class UserController {
     final static String userNameLog = "manganeta";
     final static String userPassLog = "1234";

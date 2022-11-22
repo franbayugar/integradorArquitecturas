@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego JWT a Cliente">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego consulta de obtener producto mas vendido, pero retorna listado de todos descendente, (ver limit 1)">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/util/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cliente/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/security/JWTAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/security/JWTAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/ProductoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/security/JWTAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/security/JWTAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/DTO/DTOProductReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/DTO/DTOProductReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/security/JWTAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,24 +75,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-11",
-    "last_opened_file_path": "/media/fede/Mis archivos/Estudios/TUDAI/3ro/2do Cuatrimestre/Arquitectura web/integradorArquitecturas/TP5",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "8b033d910159cca91383274065a457e1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/fede/Mis archivos/Estudios/TUDAI/3ro/2do Cuatrimestre/Arquitectura web/integradorArquitecturas/TP5&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8b033d910159cca91383274065a457e1&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -104,7 +109,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.VentaApplication">
+  <component name="RunManager" selected="Spring Boot.ClientApplication (1)">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Venta" />
       <method v="2">
@@ -174,6 +179,7 @@
       <workItem from="1668564071147" duration="7000000" />
       <workItem from="1668721979814" duration="713000" />
       <workItem from="1668722774241" duration="4527000" />
+      <workItem from="1669077573869" duration="3065000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrego JWT a Cliente">
       <created>1668726680314</created>
@@ -187,17 +193,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ID_ORDER">
-      <list>
-        <option value="Default.Root" />
-        <option value="Default.Author" />
-        <option value="Default.Date" />
-        <option value="Default.Subject" />
-        <option value="Space.CommitStatus" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

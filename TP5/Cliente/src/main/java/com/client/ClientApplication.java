@@ -25,9 +25,16 @@ public class ClientApplication {
             http.csrf().disable()
                     .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                     .authorizeRequests()
+                    /*
                     .antMatchers(HttpMethod.POST, "/user").permitAll()
                     .antMatchers(HttpMethod.GET, "/clients/{id}").permitAll()
+                    .antMatchers(HttpMethod.GET, "/v2/api-docs").permitAll()
+                    .antMatchers(HttpMethod.GET, "/swagger-ui.html").permitAll()
                     .anyRequest().authenticated();
+                    */
+                    .antMatchers("/clients/**").authenticated()
+                    .antMatchers(HttpMethod.GET, "/clients/{id}").permitAll()
+                    .anyRequest().permitAll();
         }
 
     }

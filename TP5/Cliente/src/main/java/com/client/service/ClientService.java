@@ -5,6 +5,7 @@ import com.client.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,9 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-    public Optional<Client> getClient(Integer id) { return clientRepository.findById(id); }
+    public Client getClient(Integer id) { 
+        return clientRepository.findAllById(Collections.singleton(id)).get(0);
+    }
 
     public Client updateClient(Client clientUpdated, Integer id) {
         Client client = clientRepository.getReferenceById(id);

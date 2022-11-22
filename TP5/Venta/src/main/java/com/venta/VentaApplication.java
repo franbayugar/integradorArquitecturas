@@ -27,8 +27,8 @@ public class VentaApplication {
             http.csrf().disable()
                     .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.POST, "/user").permitAll()
-                    .anyRequest().authenticated();
+                    .antMatchers(HttpMethod.GET, "/sales/**").authenticated()
+                    .anyRequest().permitAll();
         }
 
     }

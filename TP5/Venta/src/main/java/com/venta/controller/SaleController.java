@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.venta.DTO.*;
 import com.venta.model.Sale;
 import com.venta.service.SaleService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@Api(tags = "Sales", description = "Servicio de ventas")
 public class SaleController {
     @Qualifier("saleService")
     @Autowired
@@ -27,7 +29,7 @@ public class SaleController {
     }
 
     //metodos para controller
-    @GetMapping("/sale")
+    @GetMapping("/sales")
     public List<Sale> getAllSales(){
         return service.getSales();
     }
@@ -42,30 +44,11 @@ public class SaleController {
     Sale modifySale (@RequestBody Sale saleUpdated, @PathVariable Integer id) {return service.updateSale(saleUpdated,id);}
 
     @GetMapping("/sales/reportShoppingClients")
-    public List<DTOClientsReport> getReportShoppingClients() throws JsonProcessingException {
-        List<DTOClientsReport> listado = new ArrayList<>();
-        RestTemplate restTemplate = new RestTemplate();
-        String resourceUrl = "http://localhost:3001/clients";
-        for (DTOReportShoppingClient c: service.getReportShoppingSales()) {
-            ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl + "/" + c.getId_client(), String.class);
-            ObjectMapper mapper = new ObjectMapper();
-            JsonNode root = mapper.readTree(response.getBody());
-            listado.add(new DTOClientsReport(c.getId_client(), root.path("name").asText(), root.path("lastname").asText(), c.getAmount()));
-        }
-        return listado;
-    }
+    public List<DTOClientsReport> getReportShoppingClients() throws JsonProcessingException { return service.getReportShoppingSales(); }
 
     @GetMapping("/sales/reportSalesForDay")
     public List<DTOSalesForDay> getReportSalesForDay(){ return service.getReportSalesForDay(); }
 
     @GetMapping("/sales/productMoreSell")
-    public DTOProductReport getProductMoreSell() throws JsonProcessingException {
-        DTOProductMoreSale p = service.getProductMoreSell();
-        RestTemplate restTemplate = new RestTemplate();
-        String resourceUrl = "http://localhost:3000/products/"+p.getId_product();
-        ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode root = mapper.readTree(response.getBody());
-        return new DTOProductReport(p.getId_product(),root.path("name").asText(),p.getAmount());
-    }
+    public DTOProductReport getProductMoreSell() throws JsonProcessingException { return service.getProductMoreSell(); }
 }

@@ -5,6 +5,8 @@ import com.producto.service.ProductService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,4 +41,10 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     Optional<Product> getById (@PathVariable Integer id){return service.getById(id);}
+
+    @DeleteMapping("/products/{id}")
+    public ResponseEntity<?> deleteProduct(@PathVariable(value="id")int id) {
+        service.deleteProduct(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

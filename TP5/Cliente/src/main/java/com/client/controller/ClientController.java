@@ -53,7 +53,7 @@ public class ClientController {
    //     service.deleteClient(id);
    // }
     @DeleteMapping("/clients/{id}")
-    public ResponseEntity<?> deleteBook(@PathVariable(value="id")int id) {
+    public ResponseEntity<?> deleteClient(@PathVariable(value="id")int id) {
         service.deleteClient(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -67,4 +67,5 @@ public class SaleService {
     }
 
 
+    public void deleteSale(int id) { saleRepository.deleteById(id); }
 }

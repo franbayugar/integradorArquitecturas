@@ -32,4 +32,6 @@ public class ProductService {
     public Optional<Product> getById(Integer id){
         return productRepository.findById(id);
     }
+
+    public void deleteProduct(int id) {productRepository.deleteById(id);  }
 }

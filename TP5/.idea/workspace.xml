@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d44771-3866-4b01-9823-79d2584f9be8" name="Changes" comment="Se agrego Swagger a Cliente, para lo cual se realizaron varios cambios">
-      <change afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/util/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2022_21_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2022_21_17__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/VentaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/src/main/java/com/client/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/src/main/java/com/client/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Producto/src/main/java/com/producto/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Producto/src/main/java/com/producto/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/SaleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Venta/src/main/java/com/venta/service/SaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/java/com/venta/service/SaleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Venta/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Venta/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +157,7 @@
       <workItem from="1668722774241" duration="4527000" />
       <workItem from="1669077573869" duration="3262000" />
       <workItem from="1669142373508" duration="5458000" />
-      <workItem from="1669151840144" duration="2093000" />
+      <workItem from="1669151840144" duration="3041000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrego JWT a Cliente">
       <created>1668726680314</created>

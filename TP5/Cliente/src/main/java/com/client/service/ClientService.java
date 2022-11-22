@@ -34,8 +34,6 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
-    public void deleteClient(int id) {
-        clientRepository.deleteById(id);
-    }
+    public void deleteClient(int id) { clientRepository.deleteById(id); }
 
 }
